@@ -18,12 +18,14 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "cmsis_os.h"
 #include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "vm501.h"
+#include "modbus_slave.h"
 #include <stdio.h>
 /* USER CODE END Includes */
 
@@ -50,6 +52,7 @@
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
+void MX_FREERTOS_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -90,10 +93,23 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   MX_USART3_UART_Init();
+  MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
   printf("USART1 printf ready!\r\n");
   VM501_Init(); // 初始化 Modbus 工作模式
+  Modbus_Slave_Init(); // 启动 USART2 中断，全天候监听网关查询
   /* USER CODE END 2 */
+
+  /* Init scheduler */
+  osKernelInitialize();
+
+  /* Call init function for freertos objects (in cmsis_os2.c) */
+  MX_FREERTOS_Init();
+
+  /* Start scheduler */
+  osKernelStart();
+
+  /* We should never get here as control is now taken by the scheduler */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
@@ -102,17 +118,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    for (uint8_t ch = 1; ch <= 8; ch++) {
-      float freq = 0.0f, temp = 0.0f;
-      int ret = VM501_ReadSensor(ch, &freq, &temp);
-      if (ret == 0) {
-        printf("Channel %d: Freq = %.2f Hz, Temp = %.1f C\r\n", ch, freq, temp);
-      } else {
-        printf("Channel %d: Read Timeout or Error!\r\n", ch);
-      }
-      HAL_Delay(100);
-    HAL_GPIO_WritePin(GPIOA, WDI_Pin, GPIO_PIN_SET);
-    }
+    // FreeRTOS 控制，此循环不再执行
   }
   /* USER CODE END 3 */
 }
@@ -165,6 +171,28 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 
 /* USER CODE END 4 */
+
+/**
+  * @brief  Period elapsed callback in non blocking mode
+  * @note   This function is called  when TIM2 interrupt took place, inside
+  * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
+  * a global variable "uwTick" used as application time base.
+  * @param  htim : TIM handle
+  * @retval None
+  */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  /* USER CODE BEGIN Callback 0 */
+
+  /* USER CODE END Callback 0 */
+  if (htim->Instance == TIM2)
+  {
+    HAL_IncTick();
+  }
+  /* USER CODE BEGIN Callback 1 */
+
+  /* USER CODE END Callback 1 */
+}
 
 /**
   * @brief  This function is executed in case of error occurrence.

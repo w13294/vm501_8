@@ -51,8 +51,8 @@ void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, channel_8_Pin|channel_7_Pin|channel_6_Pin|channel_5_Pin
-                          |WDI_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, RS485_EN_Pin|channel_8_Pin|channel_7_Pin|channel_6_Pin
+                          |channel_5_Pin|WDI_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOC, channel_4_Pin|channel_3_Pin, GPIO_PIN_RESET);
@@ -60,10 +60,10 @@ void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, channel_2_Pin|channel_1_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : channel_8_Pin channel_7_Pin channel_6_Pin channel_5_Pin
-                           WDI_Pin */
-  GPIO_InitStruct.Pin = channel_8_Pin|channel_7_Pin|channel_6_Pin|channel_5_Pin
-                          |WDI_Pin;
+  /*Configure GPIO pins : RS485_EN_Pin channel_8_Pin channel_7_Pin channel_6_Pin
+                           channel_5_Pin WDI_Pin */
+  GPIO_InitStruct.Pin = RS485_EN_Pin|channel_8_Pin|channel_7_Pin|channel_6_Pin
+                          |channel_5_Pin|WDI_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;

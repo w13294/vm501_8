@@ -1,6 +1,7 @@
 #include "vm501.h"
 #include "usart.h"
 #include "modbus_crc.h"
+#include "cmsis_os.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -31,8 +32,12 @@ void VM501_SelectChannel(uint8_t channel)
         default: break;
     }
     
-    // 延时等待多路选择器稳定
-    HAL_Delay(50);
+    // 延时等待多路选择器稳定 (使用 RTOS 延时释放 CPU)
+    if (osKernelGetState() == osKernelRunning) {
+        osDelay(50);
+    } else {
+        HAL_Delay(50);
+    }
 }
 
 // 基础 Modbus 读寄存器函数 (功能码 03)
@@ -145,8 +150,12 @@ int VM501_ReadSensor(uint8_t channel, float *freq, float *temp)
     }
     
     // 延时等待模块自动对新接通的通道进行测量
-    // 模块默认连续扫频间隔为500ms，加上扫频本身的时间，这里给予 2000ms 充足时间
-    HAL_Delay(5000);
+    // 模块默认连续扫频间隔为500ms，加上扫频本身的时间，这里给予 10000ms 充足时间
+    if (osKernelGetState() == osKernelRunning) {
+        osDelay(10000);
+    } else {
+        HAL_Delay(10000);
+    }
 
     // 一次性读取从 0x23 开始的 7 个寄存器，覆盖频率和温度
     // 0x23: 频率 (0.1Hz) -> out[0, 1]

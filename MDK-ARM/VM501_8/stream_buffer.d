@@ -1,0 +1,14 @@
+vm501_8\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c
+vm501_8\stream_buffer.o: C:\Users\91299\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+vm501_8\stream_buffer.o: C:\Users\91299\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+vm501_8\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+vm501_8\stream_buffer.o: C:\Users\91299\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+vm501_8\stream_buffer.o: ../Core/Inc/FreeRTOSConfig.h
+vm501_8\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+vm501_8\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+vm501_8\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+vm501_8\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+vm501_8\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+vm501_8\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+vm501_8\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+vm501_8\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/stream_buffer.h

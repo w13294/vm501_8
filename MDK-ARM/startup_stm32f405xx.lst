@@ -815,10 +815,10 @@ ARM Macro Assembler    Page 13
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp.sp --apcs=
 interwork --depend=vm501_8\startup_stm32f405xx.d -ovm501_8\startup_stm32f405xx.
-o -I.\RTE\_VM501_8 -IC:\Users\91299\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMS
-IS\Core\Include --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION 
-SETA 541" --predefine="STM32F405xx SETA 1" --predefine="_RTE_ SETA 1" --list=st
-artup_stm32f405xx.lst startup_stm32f405xx.s
+o -I../Drivers/CMSIS/Include -I.\RTE\_VM501_8 -IC:\Users\91299\AppData\Local\Ar
+m\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include --predefine="__MICROLIB SETA 1" --pr
+edefine="__UVISION_VERSION SETA 541" --predefine="STM32F405xx SETA 1" --predefi
+ne="_RTE_ SETA 1" --list=startup_stm32f405xx.lst startup_stm32f405xx.s
 
 
 
