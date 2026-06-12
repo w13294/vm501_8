@@ -1,0 +1,28 @@
+--cpu=Cortex-M4.fp.sp
+"vm501_8\startup_stm32f405xx.o"
+"vm501_8\main.o"
+"vm501_8\gpio.o"
+"vm501_8\usart.o"
+"vm501_8\stm32f4xx_it.o"
+"vm501_8\stm32f4xx_hal_msp.o"
+"vm501_8\vm501.o"
+"vm501_8\modbus_crc.o"
+"vm501_8\stm32f4xx_hal_uart.o"
+"vm501_8\stm32f4xx_hal_rcc.o"
+"vm501_8\stm32f4xx_hal_rcc_ex.o"
+"vm501_8\stm32f4xx_hal_flash.o"
+"vm501_8\stm32f4xx_hal_flash_ex.o"
+"vm501_8\stm32f4xx_hal_flash_ramfunc.o"
+"vm501_8\stm32f4xx_hal_gpio.o"
+"vm501_8\stm32f4xx_hal_dma_ex.o"
+"vm501_8\stm32f4xx_hal_dma.o"
+"vm501_8\stm32f4xx_hal_pwr.o"
+"vm501_8\stm32f4xx_hal_pwr_ex.o"
+"vm501_8\stm32f4xx_hal_cortex.o"
+"vm501_8\stm32f4xx_hal.o"
+"vm501_8\stm32f4xx_hal_exti.o"
+"vm501_8\system_stm32f4xx.o"
+--library_type=microlib --strict --scatter "VM501_8\VM501_8.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "VM501_8.map" -o VM501_8\VM501_8.axf
