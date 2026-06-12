@@ -9,8 +9,10 @@ void RS485_SendData(uint8_t *pData, uint16_t Size)
     HAL_GPIO_WritePin(RS485_EN_GPIO_Port, RS485_EN_Pin, GPIO_PIN_SET);
     
     // 给予芯片非常短暂的电平建立时间
-    // (通常不用延时，或者稍微堵塞几个指令周期即可，这里为了稳妥加1ms)
-    HAL_Delay(1);
+    // (在中断中绝对不能使用 HAL_Delay，否则如果滴答定时器优先级低会导致死锁！)
+    for (volatile int i = 0; i < 5000; i++) {
+        __NOP();
+    }
 
     // 2. 阻塞发送数据
     HAL_UART_Transmit(&huart2, pData, Size, 1000);

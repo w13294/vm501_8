@@ -89,7 +89,7 @@ I (../Core/Inc/modbus_crc.h)(0x6A2BA8B6)
 I (../Core/Inc/rs485.h)(0x6A2BC0B5)
 I (../Core/Inc/usart.h)(0x6A2BBFBF)
 I (C:\Users\91299\AppData\Local\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
-F (..\Core\Src\rs485.c)(0x6A2BC0B6)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F-I.\RTE\_VM501_8-IC:\Users\91299\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="541" -DSTM32F405xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F405xx-o vm501_8\rs485.o --omf_browse vm501_8\rs485.crf --depend vm501_8\rs485.d)
+F (..\Core\Src\rs485.c)(0x6A2BCAB1)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F-I.\RTE\_VM501_8-IC:\Users\91299\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="541" -DSTM32F405xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F405xx-o vm501_8\rs485.o --omf_browse vm501_8\rs485.crf --depend vm501_8\rs485.d)
 I (../Core/Inc/rs485.h)(0x6A2BC0B5)
 I (../Core/Inc/main.h)(0x6A2BBFC0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x68F6F873)
@@ -205,7 +205,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x68F6F873)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x68F6F873)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x68F6F873)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x68F6F873)
-F (../Core/Src/freertos.c)(0x6A2BC561)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F-I.\RTE\_VM501_8-IC:\Users\91299\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="541" -DSTM32F405xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F405xx-o vm501_8\freertos.o --omf_browse vm501_8\freertos.crf --depend vm501_8\freertos.d)
+F (../Core/Src/freertos.c)(0x6A2BD098)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F-I.\RTE\_VM501_8-IC:\Users\91299\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="541" -DSTM32F405xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F405xx-o vm501_8\freertos.o --omf_browse vm501_8\freertos.crf --depend vm501_8\freertos.d)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x68F6F80C)
 I (C:\Users\91299\AppData\Local\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025237E)
 I (C:\Users\91299\AppData\Local\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
@@ -215,8 +215,10 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x68F6F80C)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x68F6F80C)
 I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x68F6F80D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x68F6F80C)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h)(0x68F6F80C)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x68F6F80C)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x68F6F80C)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x68F6F80C)
 I (../Core/Inc/main.h)(0x6A2BBFC0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x68F6F873)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A2BC46F)
@@ -246,11 +248,9 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x68F6F873)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x68F6F873)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x68F6F873)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x68F6F873)
-I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h)(0x68F6F80C)
-I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x68F6F80C)
-I (../Core/Inc/vm501.h)(0x6A2BA8EA)
-I (../Core/Inc/modbus_slave.h)(0x6A2BC2D6)
 I (../Core/Inc/gpio.h)(0x6A2B6E62)
+I (../Core/Inc/modbus_slave.h)(0x6A2BC2D6)
+I (../Core/Inc/vm501.h)(0x6A2BA8EA)
 I (C:\Users\91299\AppData\Local\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
 F (../Core/Src/usart.c)(0x6A2BC2FC)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F-I.\RTE\_VM501_8-IC:\Users\91299\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="541" -DSTM32F405xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F405xx-o vm501_8\usart.o --omf_browse vm501_8\usart.crf --depend vm501_8\usart.d)
 I (../Core/Inc/usart.h)(0x6A2BBFBF)

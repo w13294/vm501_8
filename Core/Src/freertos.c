@@ -1,34 +1,36 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * File Name          : freertos.c
-  * Description        : Code for freertos applications
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2026 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * File Name          : freertos.c
+ * Description        : Code for freertos applications
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2026 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
 #include "FreeRTOS.h"
-#include "task.h"
-#include "main.h"
 #include "cmsis_os.h"
+#include "main.h"
+#include "task.h"
+
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "vm501.h"
-#include "modbus_slave.h"
 #include "gpio.h"
+#include "modbus_slave.h"
+#include "vm501.h"
 #include <stdio.h>
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -53,14 +55,14 @@
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
 const osThreadAttr_t defaultTask_attributes = {
-  .name = "defaultTask",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
+    .name = "defaultTask",
+    .stack_size = 128 * 4,
+    .priority = (osPriority_t)osPriorityNormal,
 };
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
-
+void Feed_Watchdog(void);
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void *argument);
@@ -68,10 +70,10 @@ void StartDefaultTask(void *argument);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
 /**
-  * @brief  FreeRTOS initialization
-  * @param  None
-  * @retval None
-  */
+ * @brief  FreeRTOS initialization
+ * @param  None
+ * @retval None
+ */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
 
@@ -95,7 +97,8 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the thread(s) */
   /* creation of defaultTask */
-  defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+  defaultTaskHandle =
+      osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -104,31 +107,29 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_EVENTS */
   /* add events, ... */
   /* USER CODE END RTOS_EVENTS */
-
 }
 
 /* USER CODE BEGIN Header_StartDefaultTask */
 /**
-  * @brief  Function implementing the defaultTask thread.
-  * @param  argument: Not used
-  * @retval None
-  */
+ * @brief  Function implementing the defaultTask thread.
+ * @param  argument: Not used
+ * @retval None
+ */
 /* USER CODE END Header_StartDefaultTask */
-void StartDefaultTask(void *argument)
-{
+void StartDefaultTask(void *argument) {
   /* USER CODE BEGIN StartDefaultTask */
   /* Infinite loop */
-  for(;;)
-  {
+  for (;;) {
     for (uint8_t ch = 1; ch <= 8; ch++) {
       float freq = 0.0f, temp = 0.0f;
       int ret = VM501_ReadSensor(ch, &freq, &temp);
-      
+
       uint16_t raw_freq = 0;
       uint16_t raw_temp = 0;
 
       if (ret == 0) {
-        printf("[FreeRTOS] Channel %d: Freq = %.2f Hz, Temp = %.1f C\r\n", ch, freq, temp);
+        printf("[FreeRTOS] Channel %d: Freq = %.2f Hz, Temp = %.1f C\r\n", ch,
+               freq, temp);
         raw_freq = (uint16_t)(freq * 10.0f);
         raw_temp = (int16_t)(temp * 10.0f);
       } else {
@@ -144,7 +145,9 @@ void StartDefaultTask(void *argument)
 
       // 使用 RTOS 的延时，释放 CPU
       osDelay(100);
-      HAL_GPIO_WritePin(GPIOA, WDI_Pin, GPIO_PIN_SET); // 喂看门狗
+
+      // 调用封装好的喂狗函数
+      Feed_Watchdog();
     }
   }
   /* USER CODE END StartDefaultTask */
@@ -152,6 +155,13 @@ void StartDefaultTask(void *argument)
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
-
+/**
+ * @brief  喂外部看门狗函数
+ * @note   产生一个明显的 5ms 高电平脉冲，告知外部看门狗系统运行正常
+ */
+void Feed_Watchdog(void) {
+  HAL_GPIO_WritePin(GPIOA, WDI_Pin, GPIO_PIN_SET);
+  osDelay(5);
+  HAL_GPIO_WritePin(GPIOA, WDI_Pin, GPIO_PIN_RESET);
+}
 /* USER CODE END Application */
-

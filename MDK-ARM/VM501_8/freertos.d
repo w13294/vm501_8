@@ -8,8 +8,10 @@ vm501_8\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.
 vm501_8\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
 vm501_8\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
 vm501_8\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+vm501_8\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h
 vm501_8\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
 vm501_8\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+vm501_8\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
 vm501_8\freertos.o: ../Core/Inc/main.h
 vm501_8\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 vm501_8\freertos.o: ../Core/Inc/stm32f4xx_hal_conf.h
@@ -40,9 +42,7 @@ vm501_8\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 vm501_8\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 vm501_8\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 vm501_8\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
-vm501_8\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h
-vm501_8\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
-vm501_8\freertos.o: ../Core/Inc/vm501.h
-vm501_8\freertos.o: ../Core/Inc/modbus_slave.h
 vm501_8\freertos.o: ../Core/Inc/gpio.h
+vm501_8\freertos.o: ../Core/Inc/modbus_slave.h
+vm501_8\freertos.o: ../Core/Inc/vm501.h
 vm501_8\freertos.o: C:\Users\91299\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
