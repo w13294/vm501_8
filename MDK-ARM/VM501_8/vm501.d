@@ -32,9 +32,6 @@ vm501_8\vm501.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 vm501_8\vm501.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 vm501_8\vm501.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 vm501_8\vm501.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
-vm501_8\vm501.o: ../Core/Inc/usart.h
-vm501_8\vm501.o: C:\Users\91299\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-vm501_8\vm501.o: ../Core/Inc/modbus_crc.h
 vm501_8\vm501.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h
 vm501_8\vm501.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 vm501_8\vm501.o: ../Core/Inc/FreeRTOSConfig.h
@@ -46,4 +43,7 @@ vm501_8\vm501.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers
 vm501_8\vm501.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
 vm501_8\vm501.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
 vm501_8\vm501.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
+vm501_8\vm501.o: ../Core/Inc/modbus_crc.h
+vm501_8\vm501.o: ../Core/Inc/usart.h
+vm501_8\vm501.o: C:\Users\91299\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 vm501_8\vm501.o: C:\Users\91299\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
