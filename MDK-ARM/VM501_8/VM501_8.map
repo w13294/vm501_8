@@ -2214,116 +2214,116 @@ Image Symbol Table
     i.UsageFault_Handler                     0x0800240c   Section        0  stm32f4xx_it.o(i.UsageFault_Handler)
     i.VM501_Init                             0x0800240e   Section        0  vm501.o(i.VM501_Init)
     i.VM501_ReadSensor                       0x0800246c   Section        0  vm501.o(i.VM501_ReadSensor)
-    i.VM501_SelectChannel                    0x0800252c   Section        0  vm501.o(i.VM501_SelectChannel)
-    i.__0printf                              0x08002608   Section        0  printfa.o(i.__0printf)
-    i.__NVIC_SetPriority                     0x08002628   Section        0  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
-    __NVIC_SetPriority                       0x08002629   Thumb Code    32  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
-    i.__scatterload_copy                     0x08002648   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x08002656   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x08002658   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i._fp_digits                             0x08002668   Section        0  printfa.o(i._fp_digits)
-    _fp_digits                               0x08002669   Thumb Code   366  printfa.o(i._fp_digits)
-    i._printf_core                           0x080027ec   Section        0  printfa.o(i._printf_core)
-    _printf_core                             0x080027ed   Thumb Code  1704  printfa.o(i._printf_core)
-    i._printf_post_padding                   0x08002ea0   Section        0  printfa.o(i._printf_post_padding)
-    _printf_post_padding                     0x08002ea1   Thumb Code    36  printfa.o(i._printf_post_padding)
-    i._printf_pre_padding                    0x08002ec4   Section        0  printfa.o(i._printf_pre_padding)
-    _printf_pre_padding                      0x08002ec5   Thumb Code    46  printfa.o(i._printf_pre_padding)
-    i.fputc                                  0x08002ef4   Section        0  usart.o(i.fputc)
-    i.main                                   0x08002f0c   Section        0  main.o(i.main)
-    i.osDelay                                0x08002f58   Section        0  cmsis_os2.o(i.osDelay)
-    i.osKernelGetState                       0x08002f74   Section        0  cmsis_os2.o(i.osKernelGetState)
-    i.osKernelInitialize                     0x08002f94   Section        0  cmsis_os2.o(i.osKernelInitialize)
-    i.osKernelStart                          0x08002fb8   Section        0  cmsis_os2.o(i.osKernelStart)
-    i.osThreadNew                            0x08002ff0   Section        0  cmsis_os2.o(i.osThreadNew)
-    i.prvAddCurrentTaskToDelayedList         0x0800307c   Section        0  tasks.o(i.prvAddCurrentTaskToDelayedList)
-    prvAddCurrentTaskToDelayedList           0x0800307d   Thumb Code    84  tasks.o(i.prvAddCurrentTaskToDelayedList)
-    i.prvAddNewTaskToReadyList               0x080030d8   Section        0  tasks.o(i.prvAddNewTaskToReadyList)
-    prvAddNewTaskToReadyList                 0x080030d9   Thumb Code   190  tasks.o(i.prvAddNewTaskToReadyList)
-    i.prvCheckForValidListAndQueue           0x080031a8   Section        0  timers.o(i.prvCheckForValidListAndQueue)
-    prvCheckForValidListAndQueue             0x080031a9   Thumb Code    72  timers.o(i.prvCheckForValidListAndQueue)
-    i.prvCopyDataFromQueue                   0x08003200   Section        0  queue.o(i.prvCopyDataFromQueue)
-    prvCopyDataFromQueue                     0x08003201   Thumb Code    38  queue.o(i.prvCopyDataFromQueue)
-    i.prvCopyDataToQueue                     0x08003226   Section        0  queue.o(i.prvCopyDataToQueue)
-    prvCopyDataToQueue                       0x08003227   Thumb Code   108  queue.o(i.prvCopyDataToQueue)
-    i.prvDeleteTCB                           0x08003292   Section        0  tasks.o(i.prvDeleteTCB)
-    prvDeleteTCB                             0x08003293   Thumb Code    52  tasks.o(i.prvDeleteTCB)
-    i.prvHeapInit                            0x080032c8   Section        0  heap_4.o(i.prvHeapInit)
-    prvHeapInit                              0x080032c9   Thumb Code    66  heap_4.o(i.prvHeapInit)
-    i.prvIdleTask                            0x08003314   Section        0  tasks.o(i.prvIdleTask)
-    prvIdleTask                              0x08003315   Thumb Code    82  tasks.o(i.prvIdleTask)
-    i.prvInitialiseNewQueue                  0x08003374   Section        0  queue.o(i.prvInitialiseNewQueue)
-    prvInitialiseNewQueue                    0x08003375   Thumb Code    34  queue.o(i.prvInitialiseNewQueue)
-    i.prvInitialiseNewTask                   0x08003398   Section        0  tasks.o(i.prvInitialiseNewTask)
-    prvInitialiseNewTask                     0x08003399   Thumb Code   176  tasks.o(i.prvInitialiseNewTask)
-    i.prvInsertBlockIntoFreeList             0x08003448   Section        0  heap_4.o(i.prvInsertBlockIntoFreeList)
-    prvInsertBlockIntoFreeList               0x08003449   Thumb Code    72  heap_4.o(i.prvInsertBlockIntoFreeList)
-    i.prvInsertTimerInActiveList             0x08003494   Section        0  timers.o(i.prvInsertTimerInActiveList)
-    prvInsertTimerInActiveList               0x08003495   Thumb Code    52  timers.o(i.prvInsertTimerInActiveList)
-    i.prvIsQueueEmpty                        0x080034cc   Section        0  queue.o(i.prvIsQueueEmpty)
-    prvIsQueueEmpty                          0x080034cd   Thumb Code    28  queue.o(i.prvIsQueueEmpty)
-    i.prvProcessReceivedCommands             0x080034e8   Section        0  timers.o(i.prvProcessReceivedCommands)
-    prvProcessReceivedCommands               0x080034e9   Thumb Code   248  timers.o(i.prvProcessReceivedCommands)
-    i.prvProcessTimerOrBlockTask             0x080035e4   Section        0  timers.o(i.prvProcessTimerOrBlockTask)
-    prvProcessTimerOrBlockTask               0x080035e5   Thumb Code   182  timers.o(i.prvProcessTimerOrBlockTask)
-    i.prvResetNextTaskUnblockTime            0x080036a4   Section        0  tasks.o(i.prvResetNextTaskUnblockTime)
-    prvResetNextTaskUnblockTime              0x080036a5   Thumb Code    26  tasks.o(i.prvResetNextTaskUnblockTime)
-    i.prvSampleTimeNow                       0x080036c4   Section        0  timers.o(i.prvSampleTimeNow)
-    prvSampleTimeNow                         0x080036c5   Thumb Code    36  timers.o(i.prvSampleTimeNow)
-    i.prvSwitchTimerLists                    0x080036ec   Section        0  timers.o(i.prvSwitchTimerLists)
-    prvSwitchTimerLists                      0x080036ed   Thumb Code   104  timers.o(i.prvSwitchTimerLists)
-    i.prvTaskExitError                       0x08003758   Section        0  port.o(i.prvTaskExitError)
-    prvTaskExitError                         0x08003759   Thumb Code    36  port.o(i.prvTaskExitError)
-    i.prvTimerTask                           0x08003780   Section        0  timers.o(i.prvTimerTask)
-    prvTimerTask                             0x08003781   Thumb Code    32  timers.o(i.prvTimerTask)
-    i.prvUnlockQueue                         0x080037a4   Section        0  queue.o(i.prvUnlockQueue)
-    prvUnlockQueue                           0x080037a5   Thumb Code   106  queue.o(i.prvUnlockQueue)
-    i.pvPortMalloc                           0x08003810   Section        0  heap_4.o(i.pvPortMalloc)
-    i.pxPortInitialiseStack                  0x080038ec   Section        0  port.o(i.pxPortInitialiseStack)
-    i.uxListRemove                           0x08003918   Section        0  list.o(i.uxListRemove)
-    i.vApplicationGetIdleTaskMemory          0x08003940   Section        0  cmsis_os2.o(i.vApplicationGetIdleTaskMemory)
-    i.vApplicationGetTimerTaskMemory         0x08003954   Section        0  cmsis_os2.o(i.vApplicationGetTimerTaskMemory)
-    i.vListInitialise                        0x0800396c   Section        0  list.o(i.vListInitialise)
-    i.vListInitialiseItem                    0x08003982   Section        0  list.o(i.vListInitialiseItem)
-    i.vListInsert                            0x08003988   Section        0  list.o(i.vListInsert)
-    i.vListInsertEnd                         0x080039b8   Section        0  list.o(i.vListInsertEnd)
-    i.vPortEnterCritical                     0x080039d0   Section        0  port.o(i.vPortEnterCritical)
-    i.vPortExitCritical                      0x08003a10   Section        0  port.o(i.vPortExitCritical)
-    i.vPortFree                              0x08003a38   Section        0  heap_4.o(i.vPortFree)
-    i.vPortSetupTimerInterrupt               0x08003a9c   Section        0  port.o(i.vPortSetupTimerInterrupt)
-    i.vPortValidateInterruptPriority         0x08003ac0   Section        0  port.o(i.vPortValidateInterruptPriority)
-    i.vQueueAddToRegistry                    0x08003b14   Section        0  queue.o(i.vQueueAddToRegistry)
-    i.vQueueWaitForMessageRestricted         0x08003b3c   Section        0  queue.o(i.vQueueWaitForMessageRestricted)
-    i.vTaskDelay                             0x08003b80   Section        0  tasks.o(i.vTaskDelay)
-    i.vTaskInternalSetTimeOutState           0x08003bcc   Section        0  tasks.o(i.vTaskInternalSetTimeOutState)
-    i.vTaskMissedYield                       0x08003bdc   Section        0  tasks.o(i.vTaskMissedYield)
-    i.vTaskPlaceOnEventList                  0x08003be8   Section        0  tasks.o(i.vTaskPlaceOnEventList)
-    i.vTaskPlaceOnEventListRestricted        0x08003c18   Section        0  tasks.o(i.vTaskPlaceOnEventListRestricted)
-    i.vTaskStartScheduler                    0x08003c50   Section        0  tasks.o(i.vTaskStartScheduler)
-    i.vTaskSuspendAll                        0x08003cd8   Section        0  tasks.o(i.vTaskSuspendAll)
-    i.vTaskSwitchContext                     0x08003ce8   Section        0  tasks.o(i.vTaskSwitchContext)
-    i.xPortStartScheduler                    0x08003d4c   Section        0  port.o(i.xPortStartScheduler)
-    i.xPortSysTickHandler                    0x08003e40   Section        0  port.o(i.xPortSysTickHandler)
-    i.xQueueGenericCreateStatic              0x08003e6c   Section        0  queue.o(i.xQueueGenericCreateStatic)
-    i.xQueueGenericReset                     0x08003ed4   Section        0  queue.o(i.xQueueGenericReset)
-    i.xQueueGenericSend                      0x08003f5c   Section        0  queue.o(i.xQueueGenericSend)
-    i.xQueueGenericSendFromISR               0x080040bc   Section        0  queue.o(i.xQueueGenericSendFromISR)
-    i.xQueueReceive                          0x0800417c   Section        0  queue.o(i.xQueueReceive)
-    i.xTaskCheckForTimeOut                   0x080042b4   Section        0  tasks.o(i.xTaskCheckForTimeOut)
-    i.xTaskCreate                            0x08004328   Section        0  tasks.o(i.xTaskCreate)
-    i.xTaskCreateStatic                      0x08004382   Section        0  tasks.o(i.xTaskCreateStatic)
-    i.xTaskGetSchedulerState                 0x080043d8   Section        0  tasks.o(i.xTaskGetSchedulerState)
-    i.xTaskGetTickCount                      0x080043f4   Section        0  tasks.o(i.xTaskGetTickCount)
-    i.xTaskIncrementTick                     0x08004400   Section        0  tasks.o(i.xTaskIncrementTick)
-    i.xTaskPriorityDisinherit                0x080044c8   Section        0  tasks.o(i.xTaskPriorityDisinherit)
-    i.xTaskRemoveFromEventList               0x08004548   Section        0  tasks.o(i.xTaskRemoveFromEventList)
-    i.xTaskResumeAll                         0x080045b8   Section        0  tasks.o(i.xTaskResumeAll)
-    i.xTimerCreateTimerTask                  0x0800467c   Section        0  timers.o(i.xTimerCreateTimerTask)
-    i.xTimerGenericCommand                   0x080046dc   Section        0  timers.o(i.xTimerGenericCommand)
-    .constdata                               0x08004744   Section       36  freertos.o(.constdata)
-    .constdata                               0x08004768   Section       16  system_stm32f4xx.o(.constdata)
-    .constdata                               0x08004778   Section        8  system_stm32f4xx.o(.constdata)
-    .conststring                             0x08004780   Section       12  freertos.o(.conststring)
+    i.VM501_SelectChannel                    0x08002598   Section        0  vm501.o(i.VM501_SelectChannel)
+    i.__0printf                              0x08002674   Section        0  printfa.o(i.__0printf)
+    i.__NVIC_SetPriority                     0x08002694   Section        0  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
+    __NVIC_SetPriority                       0x08002695   Thumb Code    32  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
+    i.__scatterload_copy                     0x080026b4   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x080026c2   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x080026c4   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i._fp_digits                             0x080026d4   Section        0  printfa.o(i._fp_digits)
+    _fp_digits                               0x080026d5   Thumb Code   366  printfa.o(i._fp_digits)
+    i._printf_core                           0x08002858   Section        0  printfa.o(i._printf_core)
+    _printf_core                             0x08002859   Thumb Code  1704  printfa.o(i._printf_core)
+    i._printf_post_padding                   0x08002f0c   Section        0  printfa.o(i._printf_post_padding)
+    _printf_post_padding                     0x08002f0d   Thumb Code    36  printfa.o(i._printf_post_padding)
+    i._printf_pre_padding                    0x08002f30   Section        0  printfa.o(i._printf_pre_padding)
+    _printf_pre_padding                      0x08002f31   Thumb Code    46  printfa.o(i._printf_pre_padding)
+    i.fputc                                  0x08002f60   Section        0  usart.o(i.fputc)
+    i.main                                   0x08002f78   Section        0  main.o(i.main)
+    i.osDelay                                0x08002fc4   Section        0  cmsis_os2.o(i.osDelay)
+    i.osKernelGetState                       0x08002fe0   Section        0  cmsis_os2.o(i.osKernelGetState)
+    i.osKernelInitialize                     0x08003000   Section        0  cmsis_os2.o(i.osKernelInitialize)
+    i.osKernelStart                          0x08003024   Section        0  cmsis_os2.o(i.osKernelStart)
+    i.osThreadNew                            0x0800305c   Section        0  cmsis_os2.o(i.osThreadNew)
+    i.prvAddCurrentTaskToDelayedList         0x080030e8   Section        0  tasks.o(i.prvAddCurrentTaskToDelayedList)
+    prvAddCurrentTaskToDelayedList           0x080030e9   Thumb Code    84  tasks.o(i.prvAddCurrentTaskToDelayedList)
+    i.prvAddNewTaskToReadyList               0x08003144   Section        0  tasks.o(i.prvAddNewTaskToReadyList)
+    prvAddNewTaskToReadyList                 0x08003145   Thumb Code   190  tasks.o(i.prvAddNewTaskToReadyList)
+    i.prvCheckForValidListAndQueue           0x08003214   Section        0  timers.o(i.prvCheckForValidListAndQueue)
+    prvCheckForValidListAndQueue             0x08003215   Thumb Code    72  timers.o(i.prvCheckForValidListAndQueue)
+    i.prvCopyDataFromQueue                   0x0800326c   Section        0  queue.o(i.prvCopyDataFromQueue)
+    prvCopyDataFromQueue                     0x0800326d   Thumb Code    38  queue.o(i.prvCopyDataFromQueue)
+    i.prvCopyDataToQueue                     0x08003292   Section        0  queue.o(i.prvCopyDataToQueue)
+    prvCopyDataToQueue                       0x08003293   Thumb Code   108  queue.o(i.prvCopyDataToQueue)
+    i.prvDeleteTCB                           0x080032fe   Section        0  tasks.o(i.prvDeleteTCB)
+    prvDeleteTCB                             0x080032ff   Thumb Code    52  tasks.o(i.prvDeleteTCB)
+    i.prvHeapInit                            0x08003334   Section        0  heap_4.o(i.prvHeapInit)
+    prvHeapInit                              0x08003335   Thumb Code    66  heap_4.o(i.prvHeapInit)
+    i.prvIdleTask                            0x08003380   Section        0  tasks.o(i.prvIdleTask)
+    prvIdleTask                              0x08003381   Thumb Code    82  tasks.o(i.prvIdleTask)
+    i.prvInitialiseNewQueue                  0x080033e0   Section        0  queue.o(i.prvInitialiseNewQueue)
+    prvInitialiseNewQueue                    0x080033e1   Thumb Code    34  queue.o(i.prvInitialiseNewQueue)
+    i.prvInitialiseNewTask                   0x08003404   Section        0  tasks.o(i.prvInitialiseNewTask)
+    prvInitialiseNewTask                     0x08003405   Thumb Code   176  tasks.o(i.prvInitialiseNewTask)
+    i.prvInsertBlockIntoFreeList             0x080034b4   Section        0  heap_4.o(i.prvInsertBlockIntoFreeList)
+    prvInsertBlockIntoFreeList               0x080034b5   Thumb Code    72  heap_4.o(i.prvInsertBlockIntoFreeList)
+    i.prvInsertTimerInActiveList             0x08003500   Section        0  timers.o(i.prvInsertTimerInActiveList)
+    prvInsertTimerInActiveList               0x08003501   Thumb Code    52  timers.o(i.prvInsertTimerInActiveList)
+    i.prvIsQueueEmpty                        0x08003538   Section        0  queue.o(i.prvIsQueueEmpty)
+    prvIsQueueEmpty                          0x08003539   Thumb Code    28  queue.o(i.prvIsQueueEmpty)
+    i.prvProcessReceivedCommands             0x08003554   Section        0  timers.o(i.prvProcessReceivedCommands)
+    prvProcessReceivedCommands               0x08003555   Thumb Code   248  timers.o(i.prvProcessReceivedCommands)
+    i.prvProcessTimerOrBlockTask             0x08003650   Section        0  timers.o(i.prvProcessTimerOrBlockTask)
+    prvProcessTimerOrBlockTask               0x08003651   Thumb Code   182  timers.o(i.prvProcessTimerOrBlockTask)
+    i.prvResetNextTaskUnblockTime            0x08003710   Section        0  tasks.o(i.prvResetNextTaskUnblockTime)
+    prvResetNextTaskUnblockTime              0x08003711   Thumb Code    26  tasks.o(i.prvResetNextTaskUnblockTime)
+    i.prvSampleTimeNow                       0x08003730   Section        0  timers.o(i.prvSampleTimeNow)
+    prvSampleTimeNow                         0x08003731   Thumb Code    36  timers.o(i.prvSampleTimeNow)
+    i.prvSwitchTimerLists                    0x08003758   Section        0  timers.o(i.prvSwitchTimerLists)
+    prvSwitchTimerLists                      0x08003759   Thumb Code   104  timers.o(i.prvSwitchTimerLists)
+    i.prvTaskExitError                       0x080037c4   Section        0  port.o(i.prvTaskExitError)
+    prvTaskExitError                         0x080037c5   Thumb Code    36  port.o(i.prvTaskExitError)
+    i.prvTimerTask                           0x080037ec   Section        0  timers.o(i.prvTimerTask)
+    prvTimerTask                             0x080037ed   Thumb Code    32  timers.o(i.prvTimerTask)
+    i.prvUnlockQueue                         0x08003810   Section        0  queue.o(i.prvUnlockQueue)
+    prvUnlockQueue                           0x08003811   Thumb Code   106  queue.o(i.prvUnlockQueue)
+    i.pvPortMalloc                           0x0800387c   Section        0  heap_4.o(i.pvPortMalloc)
+    i.pxPortInitialiseStack                  0x08003958   Section        0  port.o(i.pxPortInitialiseStack)
+    i.uxListRemove                           0x08003984   Section        0  list.o(i.uxListRemove)
+    i.vApplicationGetIdleTaskMemory          0x080039ac   Section        0  cmsis_os2.o(i.vApplicationGetIdleTaskMemory)
+    i.vApplicationGetTimerTaskMemory         0x080039c0   Section        0  cmsis_os2.o(i.vApplicationGetTimerTaskMemory)
+    i.vListInitialise                        0x080039d8   Section        0  list.o(i.vListInitialise)
+    i.vListInitialiseItem                    0x080039ee   Section        0  list.o(i.vListInitialiseItem)
+    i.vListInsert                            0x080039f4   Section        0  list.o(i.vListInsert)
+    i.vListInsertEnd                         0x08003a24   Section        0  list.o(i.vListInsertEnd)
+    i.vPortEnterCritical                     0x08003a3c   Section        0  port.o(i.vPortEnterCritical)
+    i.vPortExitCritical                      0x08003a7c   Section        0  port.o(i.vPortExitCritical)
+    i.vPortFree                              0x08003aa4   Section        0  heap_4.o(i.vPortFree)
+    i.vPortSetupTimerInterrupt               0x08003b08   Section        0  port.o(i.vPortSetupTimerInterrupt)
+    i.vPortValidateInterruptPriority         0x08003b2c   Section        0  port.o(i.vPortValidateInterruptPriority)
+    i.vQueueAddToRegistry                    0x08003b80   Section        0  queue.o(i.vQueueAddToRegistry)
+    i.vQueueWaitForMessageRestricted         0x08003ba8   Section        0  queue.o(i.vQueueWaitForMessageRestricted)
+    i.vTaskDelay                             0x08003bec   Section        0  tasks.o(i.vTaskDelay)
+    i.vTaskInternalSetTimeOutState           0x08003c38   Section        0  tasks.o(i.vTaskInternalSetTimeOutState)
+    i.vTaskMissedYield                       0x08003c48   Section        0  tasks.o(i.vTaskMissedYield)
+    i.vTaskPlaceOnEventList                  0x08003c54   Section        0  tasks.o(i.vTaskPlaceOnEventList)
+    i.vTaskPlaceOnEventListRestricted        0x08003c84   Section        0  tasks.o(i.vTaskPlaceOnEventListRestricted)
+    i.vTaskStartScheduler                    0x08003cbc   Section        0  tasks.o(i.vTaskStartScheduler)
+    i.vTaskSuspendAll                        0x08003d44   Section        0  tasks.o(i.vTaskSuspendAll)
+    i.vTaskSwitchContext                     0x08003d54   Section        0  tasks.o(i.vTaskSwitchContext)
+    i.xPortStartScheduler                    0x08003db8   Section        0  port.o(i.xPortStartScheduler)
+    i.xPortSysTickHandler                    0x08003eac   Section        0  port.o(i.xPortSysTickHandler)
+    i.xQueueGenericCreateStatic              0x08003ed8   Section        0  queue.o(i.xQueueGenericCreateStatic)
+    i.xQueueGenericReset                     0x08003f40   Section        0  queue.o(i.xQueueGenericReset)
+    i.xQueueGenericSend                      0x08003fc8   Section        0  queue.o(i.xQueueGenericSend)
+    i.xQueueGenericSendFromISR               0x08004128   Section        0  queue.o(i.xQueueGenericSendFromISR)
+    i.xQueueReceive                          0x080041e8   Section        0  queue.o(i.xQueueReceive)
+    i.xTaskCheckForTimeOut                   0x08004320   Section        0  tasks.o(i.xTaskCheckForTimeOut)
+    i.xTaskCreate                            0x08004394   Section        0  tasks.o(i.xTaskCreate)
+    i.xTaskCreateStatic                      0x080043ee   Section        0  tasks.o(i.xTaskCreateStatic)
+    i.xTaskGetSchedulerState                 0x08004444   Section        0  tasks.o(i.xTaskGetSchedulerState)
+    i.xTaskGetTickCount                      0x08004460   Section        0  tasks.o(i.xTaskGetTickCount)
+    i.xTaskIncrementTick                     0x0800446c   Section        0  tasks.o(i.xTaskIncrementTick)
+    i.xTaskPriorityDisinherit                0x08004534   Section        0  tasks.o(i.xTaskPriorityDisinherit)
+    i.xTaskRemoveFromEventList               0x080045b4   Section        0  tasks.o(i.xTaskRemoveFromEventList)
+    i.xTaskResumeAll                         0x08004624   Section        0  tasks.o(i.xTaskResumeAll)
+    i.xTimerCreateTimerTask                  0x080046e8   Section        0  timers.o(i.xTimerCreateTimerTask)
+    i.xTimerGenericCommand                   0x08004748   Section        0  timers.o(i.xTimerGenericCommand)
+    .constdata                               0x080047b0   Section       36  freertos.o(.constdata)
+    .constdata                               0x080047d4   Section       16  system_stm32f4xx.o(.constdata)
+    .constdata                               0x080047e4   Section        8  system_stm32f4xx.o(.constdata)
+    .conststring                             0x080047ec   Section       12  freertos.o(.conststring)
     .data                                    0x20000000   Section        8  modbus_slave.o(.data)
     .data                                    0x20000008   Section        4  freertos.o(.data)
     .data                                    0x2000000c   Section       12  stm32f4xx_hal.o(.data)
@@ -2634,70 +2634,70 @@ Image Symbol Table
     USART2_IRQHandler                        0x08002401   Thumb Code     6  stm32f4xx_it.o(i.USART2_IRQHandler)
     UsageFault_Handler                       0x0800240d   Thumb Code     2  stm32f4xx_it.o(i.UsageFault_Handler)
     VM501_Init                               0x0800240f   Thumb Code    94  vm501.o(i.VM501_Init)
-    VM501_ReadSensor                         0x0800246d   Thumb Code   192  vm501.o(i.VM501_ReadSensor)
-    VM501_SelectChannel                      0x0800252d   Thumb Code   206  vm501.o(i.VM501_SelectChannel)
-    __0printf                                0x08002609   Thumb Code    22  printfa.o(i.__0printf)
-    __1printf                                0x08002609   Thumb Code     0  printfa.o(i.__0printf)
-    __2printf                                0x08002609   Thumb Code     0  printfa.o(i.__0printf)
-    __c89printf                              0x08002609   Thumb Code     0  printfa.o(i.__0printf)
-    printf                                   0x08002609   Thumb Code     0  printfa.o(i.__0printf)
-    __scatterload_copy                       0x08002649   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x08002657   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x08002659   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    fputc                                    0x08002ef5   Thumb Code    20  usart.o(i.fputc)
-    main                                     0x08002f0d   Thumb Code    52  main.o(i.main)
-    osDelay                                  0x08002f59   Thumb Code    26  cmsis_os2.o(i.osDelay)
-    osKernelGetState                         0x08002f75   Thumb Code    28  cmsis_os2.o(i.osKernelGetState)
-    osKernelInitialize                       0x08002f95   Thumb Code    32  cmsis_os2.o(i.osKernelInitialize)
-    osKernelStart                            0x08002fb9   Thumb Code    48  cmsis_os2.o(i.osKernelStart)
-    osThreadNew                              0x08002ff1   Thumb Code   138  cmsis_os2.o(i.osThreadNew)
-    pvPortMalloc                             0x08003811   Thumb Code   216  heap_4.o(i.pvPortMalloc)
-    pxPortInitialiseStack                    0x080038ed   Thumb Code    40  port.o(i.pxPortInitialiseStack)
-    uxListRemove                             0x08003919   Thumb Code    38  list.o(i.uxListRemove)
-    vApplicationGetIdleTaskMemory            0x08003941   Thumb Code    16  cmsis_os2.o(i.vApplicationGetIdleTaskMemory)
-    vApplicationGetTimerTaskMemory           0x08003955   Thumb Code    18  cmsis_os2.o(i.vApplicationGetTimerTaskMemory)
-    vListInitialise                          0x0800396d   Thumb Code    22  list.o(i.vListInitialise)
-    vListInitialiseItem                      0x08003983   Thumb Code     6  list.o(i.vListInitialiseItem)
-    vListInsert                              0x08003989   Thumb Code    48  list.o(i.vListInsert)
-    vListInsertEnd                           0x080039b9   Thumb Code    24  list.o(i.vListInsertEnd)
-    vPortEnterCritical                       0x080039d1   Thumb Code    54  port.o(i.vPortEnterCritical)
-    vPortExitCritical                        0x08003a11   Thumb Code    34  port.o(i.vPortExitCritical)
-    vPortFree                                0x08003a39   Thumb Code    94  heap_4.o(i.vPortFree)
-    vPortSetupTimerInterrupt                 0x08003a9d   Thumb Code    32  port.o(i.vPortSetupTimerInterrupt)
-    vPortValidateInterruptPriority           0x08003ac1   Thumb Code    74  port.o(i.vPortValidateInterruptPriority)
-    vQueueAddToRegistry                      0x08003b15   Thumb Code    34  queue.o(i.vQueueAddToRegistry)
-    vQueueWaitForMessageRestricted           0x08003b3d   Thumb Code    68  queue.o(i.vQueueWaitForMessageRestricted)
-    vTaskDelay                               0x08003b81   Thumb Code    66  tasks.o(i.vTaskDelay)
-    vTaskInternalSetTimeOutState             0x08003bcd   Thumb Code    12  tasks.o(i.vTaskInternalSetTimeOutState)
-    vTaskMissedYield                         0x08003bdd   Thumb Code     8  tasks.o(i.vTaskMissedYield)
-    vTaskPlaceOnEventList                    0x08003be9   Thumb Code    44  tasks.o(i.vTaskPlaceOnEventList)
-    vTaskPlaceOnEventListRestricted          0x08003c19   Thumb Code    52  tasks.o(i.vTaskPlaceOnEventListRestricted)
-    vTaskStartScheduler                      0x08003c51   Thumb Code   118  tasks.o(i.vTaskStartScheduler)
-    vTaskSuspendAll                          0x08003cd9   Thumb Code    10  tasks.o(i.vTaskSuspendAll)
-    vTaskSwitchContext                       0x08003ce9   Thumb Code    90  tasks.o(i.vTaskSwitchContext)
-    xPortStartScheduler                      0x08003d4d   Thumb Code   222  port.o(i.xPortStartScheduler)
-    xPortSysTickHandler                      0x08003e41   Thumb Code    38  port.o(i.xPortSysTickHandler)
-    xQueueGenericCreateStatic                0x08003e6d   Thumb Code   102  queue.o(i.xQueueGenericCreateStatic)
-    xQueueGenericReset                       0x08003ed5   Thumb Code   132  queue.o(i.xQueueGenericReset)
-    xQueueGenericSend                        0x08003f5d   Thumb Code   346  queue.o(i.xQueueGenericSend)
-    xQueueGenericSendFromISR                 0x080040bd   Thumb Code   190  queue.o(i.xQueueGenericSendFromISR)
-    xQueueReceive                            0x0800417d   Thumb Code   308  queue.o(i.xQueueReceive)
-    xTaskCheckForTimeOut                     0x080042b5   Thumb Code   112  tasks.o(i.xTaskCheckForTimeOut)
-    xTaskCreate                              0x08004329   Thumb Code    90  tasks.o(i.xTaskCreate)
-    xTaskCreateStatic                        0x08004383   Thumb Code    86  tasks.o(i.xTaskCreateStatic)
-    xTaskGetSchedulerState                   0x080043d9   Thumb Code    22  tasks.o(i.xTaskGetSchedulerState)
-    xTaskGetTickCount                        0x080043f5   Thumb Code     6  tasks.o(i.xTaskGetTickCount)
-    xTaskIncrementTick                       0x08004401   Thumb Code   192  tasks.o(i.xTaskIncrementTick)
-    xTaskPriorityDisinherit                  0x080044c9   Thumb Code   118  tasks.o(i.xTaskPriorityDisinherit)
-    xTaskRemoveFromEventList                 0x08004549   Thumb Code    98  tasks.o(i.xTaskRemoveFromEventList)
-    xTaskResumeAll                           0x080045b9   Thumb Code   182  tasks.o(i.xTaskResumeAll)
-    xTimerCreateTimerTask                    0x0800467d   Thumb Code    78  timers.o(i.xTimerCreateTimerTask)
-    xTimerGenericCommand                     0x080046dd   Thumb Code    98  timers.o(i.xTimerGenericCommand)
-    defaultTask_attributes                   0x08004744   Data          36  freertos.o(.constdata)
-    AHBPrescTable                            0x08004768   Data          16  system_stm32f4xx.o(.constdata)
-    APBPrescTable                            0x08004778   Data           8  system_stm32f4xx.o(.constdata)
-    Region$$Table$$Base                      0x0800478c   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x080047ac   Number         0  anon$$obj.o(Region$$Table)
+    VM501_ReadSensor                         0x0800246d   Thumb Code   300  vm501.o(i.VM501_ReadSensor)
+    VM501_SelectChannel                      0x08002599   Thumb Code   206  vm501.o(i.VM501_SelectChannel)
+    __0printf                                0x08002675   Thumb Code    22  printfa.o(i.__0printf)
+    __1printf                                0x08002675   Thumb Code     0  printfa.o(i.__0printf)
+    __2printf                                0x08002675   Thumb Code     0  printfa.o(i.__0printf)
+    __c89printf                              0x08002675   Thumb Code     0  printfa.o(i.__0printf)
+    printf                                   0x08002675   Thumb Code     0  printfa.o(i.__0printf)
+    __scatterload_copy                       0x080026b5   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x080026c3   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x080026c5   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    fputc                                    0x08002f61   Thumb Code    20  usart.o(i.fputc)
+    main                                     0x08002f79   Thumb Code    52  main.o(i.main)
+    osDelay                                  0x08002fc5   Thumb Code    26  cmsis_os2.o(i.osDelay)
+    osKernelGetState                         0x08002fe1   Thumb Code    28  cmsis_os2.o(i.osKernelGetState)
+    osKernelInitialize                       0x08003001   Thumb Code    32  cmsis_os2.o(i.osKernelInitialize)
+    osKernelStart                            0x08003025   Thumb Code    48  cmsis_os2.o(i.osKernelStart)
+    osThreadNew                              0x0800305d   Thumb Code   138  cmsis_os2.o(i.osThreadNew)
+    pvPortMalloc                             0x0800387d   Thumb Code   216  heap_4.o(i.pvPortMalloc)
+    pxPortInitialiseStack                    0x08003959   Thumb Code    40  port.o(i.pxPortInitialiseStack)
+    uxListRemove                             0x08003985   Thumb Code    38  list.o(i.uxListRemove)
+    vApplicationGetIdleTaskMemory            0x080039ad   Thumb Code    16  cmsis_os2.o(i.vApplicationGetIdleTaskMemory)
+    vApplicationGetTimerTaskMemory           0x080039c1   Thumb Code    18  cmsis_os2.o(i.vApplicationGetTimerTaskMemory)
+    vListInitialise                          0x080039d9   Thumb Code    22  list.o(i.vListInitialise)
+    vListInitialiseItem                      0x080039ef   Thumb Code     6  list.o(i.vListInitialiseItem)
+    vListInsert                              0x080039f5   Thumb Code    48  list.o(i.vListInsert)
+    vListInsertEnd                           0x08003a25   Thumb Code    24  list.o(i.vListInsertEnd)
+    vPortEnterCritical                       0x08003a3d   Thumb Code    54  port.o(i.vPortEnterCritical)
+    vPortExitCritical                        0x08003a7d   Thumb Code    34  port.o(i.vPortExitCritical)
+    vPortFree                                0x08003aa5   Thumb Code    94  heap_4.o(i.vPortFree)
+    vPortSetupTimerInterrupt                 0x08003b09   Thumb Code    32  port.o(i.vPortSetupTimerInterrupt)
+    vPortValidateInterruptPriority           0x08003b2d   Thumb Code    74  port.o(i.vPortValidateInterruptPriority)
+    vQueueAddToRegistry                      0x08003b81   Thumb Code    34  queue.o(i.vQueueAddToRegistry)
+    vQueueWaitForMessageRestricted           0x08003ba9   Thumb Code    68  queue.o(i.vQueueWaitForMessageRestricted)
+    vTaskDelay                               0x08003bed   Thumb Code    66  tasks.o(i.vTaskDelay)
+    vTaskInternalSetTimeOutState             0x08003c39   Thumb Code    12  tasks.o(i.vTaskInternalSetTimeOutState)
+    vTaskMissedYield                         0x08003c49   Thumb Code     8  tasks.o(i.vTaskMissedYield)
+    vTaskPlaceOnEventList                    0x08003c55   Thumb Code    44  tasks.o(i.vTaskPlaceOnEventList)
+    vTaskPlaceOnEventListRestricted          0x08003c85   Thumb Code    52  tasks.o(i.vTaskPlaceOnEventListRestricted)
+    vTaskStartScheduler                      0x08003cbd   Thumb Code   118  tasks.o(i.vTaskStartScheduler)
+    vTaskSuspendAll                          0x08003d45   Thumb Code    10  tasks.o(i.vTaskSuspendAll)
+    vTaskSwitchContext                       0x08003d55   Thumb Code    90  tasks.o(i.vTaskSwitchContext)
+    xPortStartScheduler                      0x08003db9   Thumb Code   222  port.o(i.xPortStartScheduler)
+    xPortSysTickHandler                      0x08003ead   Thumb Code    38  port.o(i.xPortSysTickHandler)
+    xQueueGenericCreateStatic                0x08003ed9   Thumb Code   102  queue.o(i.xQueueGenericCreateStatic)
+    xQueueGenericReset                       0x08003f41   Thumb Code   132  queue.o(i.xQueueGenericReset)
+    xQueueGenericSend                        0x08003fc9   Thumb Code   346  queue.o(i.xQueueGenericSend)
+    xQueueGenericSendFromISR                 0x08004129   Thumb Code   190  queue.o(i.xQueueGenericSendFromISR)
+    xQueueReceive                            0x080041e9   Thumb Code   308  queue.o(i.xQueueReceive)
+    xTaskCheckForTimeOut                     0x08004321   Thumb Code   112  tasks.o(i.xTaskCheckForTimeOut)
+    xTaskCreate                              0x08004395   Thumb Code    90  tasks.o(i.xTaskCreate)
+    xTaskCreateStatic                        0x080043ef   Thumb Code    86  tasks.o(i.xTaskCreateStatic)
+    xTaskGetSchedulerState                   0x08004445   Thumb Code    22  tasks.o(i.xTaskGetSchedulerState)
+    xTaskGetTickCount                        0x08004461   Thumb Code     6  tasks.o(i.xTaskGetTickCount)
+    xTaskIncrementTick                       0x0800446d   Thumb Code   192  tasks.o(i.xTaskIncrementTick)
+    xTaskPriorityDisinherit                  0x08004535   Thumb Code   118  tasks.o(i.xTaskPriorityDisinherit)
+    xTaskRemoveFromEventList                 0x080045b5   Thumb Code    98  tasks.o(i.xTaskRemoveFromEventList)
+    xTaskResumeAll                           0x08004625   Thumb Code   182  tasks.o(i.xTaskResumeAll)
+    xTimerCreateTimerTask                    0x080046e9   Thumb Code    78  timers.o(i.xTimerCreateTimerTask)
+    xTimerGenericCommand                     0x08004749   Thumb Code    98  timers.o(i.xTimerGenericCommand)
+    defaultTask_attributes                   0x080047b0   Data          36  freertos.o(.constdata)
+    AHBPrescTable                            0x080047d4   Data          16  system_stm32f4xx.o(.constdata)
+    APBPrescTable                            0x080047e4   Data           8  system_stm32f4xx.o(.constdata)
+    Region$$Table$$Base                      0x080047f8   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08004818   Number         0  anon$$obj.o(Region$$Table)
     modbus_rx_buf                            0x20000000   Data           8  modbus_slave.o(.data)
     defaultTaskHandle                        0x20000008   Data           4  freertos.o(.data)
     uwTickFreq                               0x2000000c   Data           1  stm32f4xx_hal.o(.data)
@@ -2722,9 +2722,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000189
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000484c, Max: 0x00100000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000048b8, Max: 0x00100000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000047ac, Max: 0x00100000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00004818, Max: 0x00100000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -2839,118 +2839,118 @@ Memory Map of the image
     0x08002400   0x08002400   0x0000000c   Code   RO          479    i.USART2_IRQHandler  stm32f4xx_it.o
     0x0800240c   0x0800240c   0x00000002   Code   RO          480    i.UsageFault_Handler  stm32f4xx_it.o
     0x0800240e   0x0800240e   0x0000005e   Code   RO           15    i.VM501_Init        vm501.o
-    0x0800246c   0x0800246c   0x000000c0   Code   RO           16    i.VM501_ReadSensor  vm501.o
-    0x0800252c   0x0800252c   0x000000dc   Code   RO           17    i.VM501_SelectChannel  vm501.o
-    0x08002608   0x08002608   0x00000020   Code   RO         5128    i.__0printf         mc_w.l(printfa.o)
-    0x08002628   0x08002628   0x00000020   Code   RO         2339    i.__NVIC_SetPriority  stm32f4xx_hal_cortex.o
-    0x08002648   0x08002648   0x0000000e   Code   RO         5200    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08002656   0x08002656   0x00000002   Code   RO         5201    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08002658   0x08002658   0x0000000e   Code   RO         5202    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x08002666   0x08002666   0x00000002   PAD
-    0x08002668   0x08002668   0x00000184   Code   RO         5135    i._fp_digits        mc_w.l(printfa.o)
-    0x080027ec   0x080027ec   0x000006b4   Code   RO         5136    i._printf_core      mc_w.l(printfa.o)
-    0x08002ea0   0x08002ea0   0x00000024   Code   RO         5137    i._printf_post_padding  mc_w.l(printfa.o)
-    0x08002ec4   0x08002ec4   0x0000002e   Code   RO         5138    i._printf_pre_padding  mc_w.l(printfa.o)
-    0x08002ef2   0x08002ef2   0x00000002   PAD
-    0x08002ef4   0x08002ef4   0x00000018   Code   RO          418    i.fputc             usart.o
-    0x08002f0c   0x08002f0c   0x0000004c   Code   RO          285    i.main              main.o
-    0x08002f58   0x08002f58   0x0000001a   Code   RO         4242    i.osDelay           cmsis_os2.o
-    0x08002f72   0x08002f72   0x00000002   PAD
-    0x08002f74   0x08002f74   0x00000020   Code   RO         4251    i.osKernelGetState  cmsis_os2.o
-    0x08002f94   0x08002f94   0x00000024   Code   RO         4256    i.osKernelInitialize  cmsis_os2.o
-    0x08002fb8   0x08002fb8   0x00000038   Code   RO         4259    i.osKernelStart     cmsis_os2.o
-    0x08002ff0   0x08002ff0   0x0000008a   Code   RO         4301    i.osThreadNew       cmsis_os2.o
-    0x0800307a   0x0800307a   0x00000002   PAD
-    0x0800307c   0x0800307c   0x0000005c   Code   RO         3701    i.prvAddCurrentTaskToDelayedList  tasks.o
-    0x080030d8   0x080030d8   0x000000d0   Code   RO         3702    i.prvAddNewTaskToReadyList  tasks.o
-    0x080031a8   0x080031a8   0x00000058   Code   RO         4066    i.prvCheckForValidListAndQueue  timers.o
-    0x08003200   0x08003200   0x00000026   Code   RO         3298    i.prvCopyDataFromQueue  queue.o
-    0x08003226   0x08003226   0x0000006c   Code   RO         3299    i.prvCopyDataToQueue  queue.o
-    0x08003292   0x08003292   0x00000034   Code   RO         3703    i.prvDeleteTCB      tasks.o
-    0x080032c6   0x080032c6   0x00000002   PAD
-    0x080032c8   0x080032c8   0x0000004c   Code   RO         4750    i.prvHeapInit       heap_4.o
-    0x08003314   0x08003314   0x00000060   Code   RO         3704    i.prvIdleTask       tasks.o
-    0x08003374   0x08003374   0x00000022   Code   RO         3301    i.prvInitialiseNewQueue  queue.o
-    0x08003396   0x08003396   0x00000002   PAD
-    0x08003398   0x08003398   0x000000b0   Code   RO         3705    i.prvInitialiseNewTask  tasks.o
-    0x08003448   0x08003448   0x0000004c   Code   RO         4751    i.prvInsertBlockIntoFreeList  heap_4.o
-    0x08003494   0x08003494   0x00000038   Code   RO         4068    i.prvInsertTimerInActiveList  timers.o
-    0x080034cc   0x080034cc   0x0000001c   Code   RO         3302    i.prvIsQueueEmpty   queue.o
-    0x080034e8   0x080034e8   0x000000fc   Code   RO         4069    i.prvProcessReceivedCommands  timers.o
-    0x080035e4   0x080035e4   0x000000c0   Code   RO         4070    i.prvProcessTimerOrBlockTask  timers.o
-    0x080036a4   0x080036a4   0x00000020   Code   RO         3707    i.prvResetNextTaskUnblockTime  tasks.o
-    0x080036c4   0x080036c4   0x00000028   Code   RO         4071    i.prvSampleTimeNow  timers.o
-    0x080036ec   0x080036ec   0x0000006c   Code   RO         4072    i.prvSwitchTimerLists  timers.o
-    0x08003758   0x08003758   0x00000028   Code   RO         4806    i.prvTaskExitError  port.o
-    0x08003780   0x08003780   0x00000024   Code   RO         4073    i.prvTimerTask      timers.o
-    0x080037a4   0x080037a4   0x0000006a   Code   RO         3303    i.prvUnlockQueue    queue.o
-    0x0800380e   0x0800380e   0x00000002   PAD
-    0x08003810   0x08003810   0x000000dc   Code   RO         4752    i.pvPortMalloc      heap_4.o
-    0x080038ec   0x080038ec   0x0000002c   Code   RO         4807    i.pxPortInitialiseStack  port.o
-    0x08003918   0x08003918   0x00000026   Code   RO         3258    i.uxListRemove      list.o
-    0x0800393e   0x0800393e   0x00000002   PAD
-    0x08003940   0x08003940   0x00000014   Code   RO         4313    i.vApplicationGetIdleTaskMemory  cmsis_os2.o
-    0x08003954   0x08003954   0x00000018   Code   RO         4314    i.vApplicationGetTimerTaskMemory  cmsis_os2.o
-    0x0800396c   0x0800396c   0x00000016   Code   RO         3259    i.vListInitialise   list.o
-    0x08003982   0x08003982   0x00000006   Code   RO         3260    i.vListInitialiseItem  list.o
-    0x08003988   0x08003988   0x00000030   Code   RO         3261    i.vListInsert       list.o
-    0x080039b8   0x080039b8   0x00000018   Code   RO         3262    i.vListInsertEnd    list.o
-    0x080039d0   0x080039d0   0x00000040   Code   RO         4809    i.vPortEnterCritical  port.o
-    0x08003a10   0x08003a10   0x00000028   Code   RO         4810    i.vPortExitCritical  port.o
-    0x08003a38   0x08003a38   0x00000064   Code   RO         4753    i.vPortFree         heap_4.o
-    0x08003a9c   0x08003a9c   0x00000024   Code   RO         4811    i.vPortSetupTimerInterrupt  port.o
-    0x08003ac0   0x08003ac0   0x00000054   Code   RO         4812    i.vPortValidateInterruptPriority  port.o
-    0x08003b14   0x08003b14   0x00000028   Code   RO         3309    i.vQueueAddToRegistry  queue.o
-    0x08003b3c   0x08003b3c   0x00000044   Code   RO         3313    i.vQueueWaitForMessageRestricted  queue.o
-    0x08003b80   0x08003b80   0x0000004c   Code   RO         3720    i.vTaskDelay        tasks.o
-    0x08003bcc   0x08003bcc   0x00000010   Code   RO         3725    i.vTaskInternalSetTimeOutState  tasks.o
-    0x08003bdc   0x08003bdc   0x0000000c   Code   RO         3726    i.vTaskMissedYield  tasks.o
-    0x08003be8   0x08003be8   0x00000030   Code   RO         3728    i.vTaskPlaceOnEventList  tasks.o
-    0x08003c18   0x08003c18   0x00000038   Code   RO         3729    i.vTaskPlaceOnEventListRestricted  tasks.o
-    0x08003c50   0x08003c50   0x00000088   Code   RO         3737    i.vTaskStartScheduler  tasks.o
-    0x08003cd8   0x08003cd8   0x00000010   Code   RO         3739    i.vTaskSuspendAll   tasks.o
-    0x08003ce8   0x08003ce8   0x00000064   Code   RO         3740    i.vTaskSwitchContext  tasks.o
-    0x08003d4c   0x08003d4c   0x000000f4   Code   RO         4813    i.xPortStartScheduler  port.o
-    0x08003e40   0x08003e40   0x0000002c   Code   RO         4814    i.xPortSysTickHandler  port.o
-    0x08003e6c   0x08003e6c   0x00000066   Code   RO         3319    i.xQueueGenericCreateStatic  queue.o
-    0x08003ed2   0x08003ed2   0x00000002   PAD
-    0x08003ed4   0x08003ed4   0x00000088   Code   RO         3320    i.xQueueGenericReset  queue.o
-    0x08003f5c   0x08003f5c   0x00000160   Code   RO         3321    i.xQueueGenericSend  queue.o
-    0x080040bc   0x080040bc   0x000000be   Code   RO         3322    i.xQueueGenericSendFromISR  queue.o
-    0x0800417a   0x0800417a   0x00000002   PAD
-    0x0800417c   0x0800417c   0x00000138   Code   RO         3331    i.xQueueReceive     queue.o
-    0x080042b4   0x080042b4   0x00000074   Code   RO         3742    i.xTaskCheckForTimeOut  tasks.o
-    0x08004328   0x08004328   0x0000005a   Code   RO         3743    i.xTaskCreate       tasks.o
-    0x08004382   0x08004382   0x00000056   Code   RO         3744    i.xTaskCreateStatic  tasks.o
-    0x080043d8   0x080043d8   0x0000001c   Code   RO         3748    i.xTaskGetSchedulerState  tasks.o
-    0x080043f4   0x080043f4   0x0000000c   Code   RO         3749    i.xTaskGetTickCount  tasks.o
-    0x08004400   0x08004400   0x000000c8   Code   RO         3751    i.xTaskIncrementTick  tasks.o
-    0x080044c8   0x080044c8   0x00000080   Code   RO         3754    i.xTaskPriorityDisinherit  tasks.o
-    0x08004548   0x08004548   0x00000070   Code   RO         3756    i.xTaskRemoveFromEventList  tasks.o
-    0x080045b8   0x080045b8   0x000000c4   Code   RO         3757    i.xTaskResumeAll    tasks.o
-    0x0800467c   0x0800467c   0x00000060   Code   RO         4082    i.xTimerCreateTimerTask  timers.o
-    0x080046dc   0x080046dc   0x00000068   Code   RO         4083    i.xTimerGenericCommand  timers.o
-    0x08004744   0x08004744   0x00000024   Data   RO          358    .constdata          freertos.o
-    0x08004768   0x08004768   0x00000010   Data   RO         3094    .constdata          system_stm32f4xx.o
-    0x08004778   0x08004778   0x00000008   Data   RO         3095    .constdata          system_stm32f4xx.o
-    0x08004780   0x08004780   0x0000000c   Data   RO          359    .conststring        freertos.o
-    0x0800478c   0x0800478c   0x00000020   Data   RO         5198    Region$$Table       anon$$obj.o
+    0x0800246c   0x0800246c   0x0000012c   Code   RO           16    i.VM501_ReadSensor  vm501.o
+    0x08002598   0x08002598   0x000000dc   Code   RO           17    i.VM501_SelectChannel  vm501.o
+    0x08002674   0x08002674   0x00000020   Code   RO         5128    i.__0printf         mc_w.l(printfa.o)
+    0x08002694   0x08002694   0x00000020   Code   RO         2339    i.__NVIC_SetPriority  stm32f4xx_hal_cortex.o
+    0x080026b4   0x080026b4   0x0000000e   Code   RO         5200    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x080026c2   0x080026c2   0x00000002   Code   RO         5201    i.__scatterload_null  mc_w.l(handlers.o)
+    0x080026c4   0x080026c4   0x0000000e   Code   RO         5202    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x080026d2   0x080026d2   0x00000002   PAD
+    0x080026d4   0x080026d4   0x00000184   Code   RO         5135    i._fp_digits        mc_w.l(printfa.o)
+    0x08002858   0x08002858   0x000006b4   Code   RO         5136    i._printf_core      mc_w.l(printfa.o)
+    0x08002f0c   0x08002f0c   0x00000024   Code   RO         5137    i._printf_post_padding  mc_w.l(printfa.o)
+    0x08002f30   0x08002f30   0x0000002e   Code   RO         5138    i._printf_pre_padding  mc_w.l(printfa.o)
+    0x08002f5e   0x08002f5e   0x00000002   PAD
+    0x08002f60   0x08002f60   0x00000018   Code   RO          418    i.fputc             usart.o
+    0x08002f78   0x08002f78   0x0000004c   Code   RO          285    i.main              main.o
+    0x08002fc4   0x08002fc4   0x0000001a   Code   RO         4242    i.osDelay           cmsis_os2.o
+    0x08002fde   0x08002fde   0x00000002   PAD
+    0x08002fe0   0x08002fe0   0x00000020   Code   RO         4251    i.osKernelGetState  cmsis_os2.o
+    0x08003000   0x08003000   0x00000024   Code   RO         4256    i.osKernelInitialize  cmsis_os2.o
+    0x08003024   0x08003024   0x00000038   Code   RO         4259    i.osKernelStart     cmsis_os2.o
+    0x0800305c   0x0800305c   0x0000008a   Code   RO         4301    i.osThreadNew       cmsis_os2.o
+    0x080030e6   0x080030e6   0x00000002   PAD
+    0x080030e8   0x080030e8   0x0000005c   Code   RO         3701    i.prvAddCurrentTaskToDelayedList  tasks.o
+    0x08003144   0x08003144   0x000000d0   Code   RO         3702    i.prvAddNewTaskToReadyList  tasks.o
+    0x08003214   0x08003214   0x00000058   Code   RO         4066    i.prvCheckForValidListAndQueue  timers.o
+    0x0800326c   0x0800326c   0x00000026   Code   RO         3298    i.prvCopyDataFromQueue  queue.o
+    0x08003292   0x08003292   0x0000006c   Code   RO         3299    i.prvCopyDataToQueue  queue.o
+    0x080032fe   0x080032fe   0x00000034   Code   RO         3703    i.prvDeleteTCB      tasks.o
+    0x08003332   0x08003332   0x00000002   PAD
+    0x08003334   0x08003334   0x0000004c   Code   RO         4750    i.prvHeapInit       heap_4.o
+    0x08003380   0x08003380   0x00000060   Code   RO         3704    i.prvIdleTask       tasks.o
+    0x080033e0   0x080033e0   0x00000022   Code   RO         3301    i.prvInitialiseNewQueue  queue.o
+    0x08003402   0x08003402   0x00000002   PAD
+    0x08003404   0x08003404   0x000000b0   Code   RO         3705    i.prvInitialiseNewTask  tasks.o
+    0x080034b4   0x080034b4   0x0000004c   Code   RO         4751    i.prvInsertBlockIntoFreeList  heap_4.o
+    0x08003500   0x08003500   0x00000038   Code   RO         4068    i.prvInsertTimerInActiveList  timers.o
+    0x08003538   0x08003538   0x0000001c   Code   RO         3302    i.prvIsQueueEmpty   queue.o
+    0x08003554   0x08003554   0x000000fc   Code   RO         4069    i.prvProcessReceivedCommands  timers.o
+    0x08003650   0x08003650   0x000000c0   Code   RO         4070    i.prvProcessTimerOrBlockTask  timers.o
+    0x08003710   0x08003710   0x00000020   Code   RO         3707    i.prvResetNextTaskUnblockTime  tasks.o
+    0x08003730   0x08003730   0x00000028   Code   RO         4071    i.prvSampleTimeNow  timers.o
+    0x08003758   0x08003758   0x0000006c   Code   RO         4072    i.prvSwitchTimerLists  timers.o
+    0x080037c4   0x080037c4   0x00000028   Code   RO         4806    i.prvTaskExitError  port.o
+    0x080037ec   0x080037ec   0x00000024   Code   RO         4073    i.prvTimerTask      timers.o
+    0x08003810   0x08003810   0x0000006a   Code   RO         3303    i.prvUnlockQueue    queue.o
+    0x0800387a   0x0800387a   0x00000002   PAD
+    0x0800387c   0x0800387c   0x000000dc   Code   RO         4752    i.pvPortMalloc      heap_4.o
+    0x08003958   0x08003958   0x0000002c   Code   RO         4807    i.pxPortInitialiseStack  port.o
+    0x08003984   0x08003984   0x00000026   Code   RO         3258    i.uxListRemove      list.o
+    0x080039aa   0x080039aa   0x00000002   PAD
+    0x080039ac   0x080039ac   0x00000014   Code   RO         4313    i.vApplicationGetIdleTaskMemory  cmsis_os2.o
+    0x080039c0   0x080039c0   0x00000018   Code   RO         4314    i.vApplicationGetTimerTaskMemory  cmsis_os2.o
+    0x080039d8   0x080039d8   0x00000016   Code   RO         3259    i.vListInitialise   list.o
+    0x080039ee   0x080039ee   0x00000006   Code   RO         3260    i.vListInitialiseItem  list.o
+    0x080039f4   0x080039f4   0x00000030   Code   RO         3261    i.vListInsert       list.o
+    0x08003a24   0x08003a24   0x00000018   Code   RO         3262    i.vListInsertEnd    list.o
+    0x08003a3c   0x08003a3c   0x00000040   Code   RO         4809    i.vPortEnterCritical  port.o
+    0x08003a7c   0x08003a7c   0x00000028   Code   RO         4810    i.vPortExitCritical  port.o
+    0x08003aa4   0x08003aa4   0x00000064   Code   RO         4753    i.vPortFree         heap_4.o
+    0x08003b08   0x08003b08   0x00000024   Code   RO         4811    i.vPortSetupTimerInterrupt  port.o
+    0x08003b2c   0x08003b2c   0x00000054   Code   RO         4812    i.vPortValidateInterruptPriority  port.o
+    0x08003b80   0x08003b80   0x00000028   Code   RO         3309    i.vQueueAddToRegistry  queue.o
+    0x08003ba8   0x08003ba8   0x00000044   Code   RO         3313    i.vQueueWaitForMessageRestricted  queue.o
+    0x08003bec   0x08003bec   0x0000004c   Code   RO         3720    i.vTaskDelay        tasks.o
+    0x08003c38   0x08003c38   0x00000010   Code   RO         3725    i.vTaskInternalSetTimeOutState  tasks.o
+    0x08003c48   0x08003c48   0x0000000c   Code   RO         3726    i.vTaskMissedYield  tasks.o
+    0x08003c54   0x08003c54   0x00000030   Code   RO         3728    i.vTaskPlaceOnEventList  tasks.o
+    0x08003c84   0x08003c84   0x00000038   Code   RO         3729    i.vTaskPlaceOnEventListRestricted  tasks.o
+    0x08003cbc   0x08003cbc   0x00000088   Code   RO         3737    i.vTaskStartScheduler  tasks.o
+    0x08003d44   0x08003d44   0x00000010   Code   RO         3739    i.vTaskSuspendAll   tasks.o
+    0x08003d54   0x08003d54   0x00000064   Code   RO         3740    i.vTaskSwitchContext  tasks.o
+    0x08003db8   0x08003db8   0x000000f4   Code   RO         4813    i.xPortStartScheduler  port.o
+    0x08003eac   0x08003eac   0x0000002c   Code   RO         4814    i.xPortSysTickHandler  port.o
+    0x08003ed8   0x08003ed8   0x00000066   Code   RO         3319    i.xQueueGenericCreateStatic  queue.o
+    0x08003f3e   0x08003f3e   0x00000002   PAD
+    0x08003f40   0x08003f40   0x00000088   Code   RO         3320    i.xQueueGenericReset  queue.o
+    0x08003fc8   0x08003fc8   0x00000160   Code   RO         3321    i.xQueueGenericSend  queue.o
+    0x08004128   0x08004128   0x000000be   Code   RO         3322    i.xQueueGenericSendFromISR  queue.o
+    0x080041e6   0x080041e6   0x00000002   PAD
+    0x080041e8   0x080041e8   0x00000138   Code   RO         3331    i.xQueueReceive     queue.o
+    0x08004320   0x08004320   0x00000074   Code   RO         3742    i.xTaskCheckForTimeOut  tasks.o
+    0x08004394   0x08004394   0x0000005a   Code   RO         3743    i.xTaskCreate       tasks.o
+    0x080043ee   0x080043ee   0x00000056   Code   RO         3744    i.xTaskCreateStatic  tasks.o
+    0x08004444   0x08004444   0x0000001c   Code   RO         3748    i.xTaskGetSchedulerState  tasks.o
+    0x08004460   0x08004460   0x0000000c   Code   RO         3749    i.xTaskGetTickCount  tasks.o
+    0x0800446c   0x0800446c   0x000000c8   Code   RO         3751    i.xTaskIncrementTick  tasks.o
+    0x08004534   0x08004534   0x00000080   Code   RO         3754    i.xTaskPriorityDisinherit  tasks.o
+    0x080045b4   0x080045b4   0x00000070   Code   RO         3756    i.xTaskRemoveFromEventList  tasks.o
+    0x08004624   0x08004624   0x000000c4   Code   RO         3757    i.xTaskResumeAll    tasks.o
+    0x080046e8   0x080046e8   0x00000060   Code   RO         4082    i.xTimerCreateTimerTask  timers.o
+    0x08004748   0x08004748   0x00000068   Code   RO         4083    i.xTimerGenericCommand  timers.o
+    0x080047b0   0x080047b0   0x00000024   Data   RO          358    .constdata          freertos.o
+    0x080047d4   0x080047d4   0x00000010   Data   RO         3094    .constdata          system_stm32f4xx.o
+    0x080047e4   0x080047e4   0x00000008   Data   RO         3095    .constdata          system_stm32f4xx.o
+    0x080047ec   0x080047ec   0x0000000c   Data   RO          359    .conststring        freertos.o
+    0x080047f8   0x080047f8   0x00000020   Data   RO         5198    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x080047ac, Size: 0x00004eb8, Max: 0x0001c000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08004818, Size: 0x00004eb8, Max: 0x0001c000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x080047ac   0x00000008   Data   RW          221    .data               modbus_slave.o
-    0x20000008   0x080047b4   0x00000004   Data   RW          360    .data               freertos.o
-    0x2000000c   0x080047b8   0x0000000c   Data   RW         2498    .data               stm32f4xx_hal.o
-    0x20000018   0x080047c4   0x00000004   Data   RW         3096    .data               system_stm32f4xx.o
-    0x2000001c   0x080047c8   0x0000003c   Data   RW         3760    .data               tasks.o
-    0x20000058   0x08004804   0x00000014   Data   RW         4091    .data               timers.o
-    0x2000006c   0x08004818   0x00000004   Data   RW         4316    .data               cmsis_os2.o
-    0x20000070   0x0800481c   0x00000020   Data   RW         4759    .data               heap_4.o
-    0x20000090   0x0800483c   0x0000000c   Data   RW         4815    .data               port.o
-    0x2000009c   0x08004848   0x00000004   Data   RW         5174    .data               mc_w.l(stdout.o)
+    0x20000000   0x08004818   0x00000008   Data   RW          221    .data               modbus_slave.o
+    0x20000008   0x08004820   0x00000004   Data   RW          360    .data               freertos.o
+    0x2000000c   0x08004824   0x0000000c   Data   RW         2498    .data               stm32f4xx_hal.o
+    0x20000018   0x08004830   0x00000004   Data   RW         3096    .data               system_stm32f4xx.o
+    0x2000001c   0x08004834   0x0000003c   Data   RW         3760    .data               tasks.o
+    0x20000058   0x08004870   0x00000014   Data   RW         4091    .data               timers.o
+    0x2000006c   0x08004884   0x00000004   Data   RW         4316    .data               cmsis_os2.o
+    0x20000070   0x08004888   0x00000020   Data   RW         4759    .data               heap_4.o
+    0x20000090   0x080048a8   0x0000000c   Data   RW         4815    .data               port.o
+    0x2000009c   0x080048b4   0x00000004   Data   RW         5174    .data               mc_w.l(stdout.o)
     0x200000a0        -       0x00000020   Zero   RW          220    .bss                modbus_slave.o
     0x200000c0        -       0x000000d8   Zero   RW          419    .bss                usart.o
     0x20000198        -       0x00000048   Zero   RW          570    .bss                stm32f4xx_hal_timebase_tim.o
@@ -2959,11 +2959,11 @@ Memory Map of the image
     0x200006e4        -       0x00000118   Zero   RW         4090    .bss                timers.o
     0x200007fc        -       0x000006b8   Zero   RW         4315    .bss                cmsis_os2.o
     0x20000eb4        -       0x00003c00   Zero   RW         4758    .bss                heap_4.o
-    0x20004ab4   0x0800484c   0x00000004   PAD
+    0x20004ab4   0x080048b8   0x00000004   PAD
     0x20004ab8        -       0x00000400   Zero   RW            1    STACK               startup_stm32f405xx.o
 
 
-    Execution Region RW_IRAM2 (Exec base: 0x2001c000, Load base: 0x0800484c, Size: 0x00000000, Max: 0x00004000, ABSOLUTE)
+    Execution Region RW_IRAM2 (Exec base: 0x2001c000, Load base: 0x080048b8, Size: 0x00000000, Max: 0x00004000, ABSOLUTE)
 
     **** No section assigned to this execution region ****
 
@@ -3004,10 +3004,10 @@ Image component sizes
       2084        168          0         60       1220      26924   tasks.o
        972         80          0         20        280      32171   timers.o
        448         54          0          0        216       3696   usart.o
-       958         34          0          0          0     655890   vm501.o
+      1066         34          0          0          0     656198   vm501.o
 
     ----------------------------------------------------------------------
-     14122        996        496        156      19992     934397   Object Totals
+     14230        996        496        156      19992     934705   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         34          0          0          0          4          0   (incl. Padding)
 
@@ -3065,15 +3065,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     17852       1102        496        160      19992     921625   Grand Totals
-     17852       1102        496        160      19992     921625   ELF Image Totals
-     17852       1102        496        160          0          0   ROM Totals
+     17960       1102        496        160      19992     921933   Grand Totals
+     17960       1102        496        160      19992     921933   ELF Image Totals
+     17960       1102        496        160          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                18348 (  17.92kB)
+    Total RO  Size (Code + RO Data)                18456 (  18.02kB)
     Total RW  Size (RW Data + ZI Data)             20152 (  19.68kB)
-    Total ROM Size (Code + RO Data + RW Data)      18508 (  18.07kB)
+    Total ROM Size (Code + RO Data + RW Data)      18616 (  18.18kB)
 
 ==============================================================================
 

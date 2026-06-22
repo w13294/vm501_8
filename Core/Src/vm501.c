@@ -200,21 +200,78 @@ int VM501_ReadSensor(uint8_t channel, float *freq, float *temp) {
     VM501_SelectChannel(channel);
     HAL_Delay(200); // 预留通道稳定时间
 
-    Modbus_WriteReg(0x0003, 0x0031); // 触发一次测量
+    Modbus_WriteReg(0x0003, 0x0031); // 触发第一次测量
   }
 
-  int timeout_ms = 12000; // 基础 12 秒超时
-  int poll_interval = 2500;
+  int timeout_ms = 12000; // 基础 12 秒总超时
   int valid_count = 0;
   int zero_freq_count = 0;
+  int disconnect_count = 0; // 新增：空通道容错计数器
 
   while (timeout_ms > 0) {
-    if (osKernelGetState() == osKernelRunning) {
-      osDelay(poll_interval);
-    } else {
-      HAL_Delay(poll_interval);
+    // 1. 科学轮询 SYS_STA (0x0020) 判断测量是否完成，单次测量最多等 3000ms
+    int wait_ms = 0;
+    int measure_done = 0;
+    int is_disconnected = 0;
+
+    while (wait_ms < 3000 && timeout_ms > 0) {
+      if (osKernelGetState() == osKernelRunning) {
+        osDelay(100);
+      } else {
+        HAL_Delay(100);
+      }
+      wait_ms += 100;
+      timeout_ms -= 100;
+
+      uint8_t sta_buf[2];
+      // 读取 SYS_STA，地址 0x0020
+      if (Modbus_ReadRegs(0x0020, 1, sta_buf, 100) == 0) {
+        uint16_t sys_sta = (sta_buf[0] << 8) | sta_buf[1];
+        
+        // 【容错升级：防继电器抖动】
+        // 检查 bit15 (0x8000)：1 表示“线圈未接入”。
+        if (sys_sta & 0x8000) {
+          is_disconnected = 1;
+          break; // 发现未接入，立刻跳出本轮状态查询
+        }
+
+        // 检查 bit4 (0x0010)：1 表示当前单次测量已完成
+        if (sys_sta & 0x0010) {
+          measure_done = 1;
+          // 硬件经验：模块状态虽已置 1，但底层可能还需要一点时间将浮点数据搬运到保持寄存器
+          // 延时 1000ms 缓冲，确保接下来读到的数据 100% 完整稳定！
+          if (osKernelGetState() == osKernelRunning) {
+            osDelay(1000);
+          } else {
+            HAL_Delay(1000);
+          }
+          break; 
+        }
+      }
     }
 
+    if (is_disconnected) {
+      disconnect_count++;
+      if (disconnect_count >= 10) {
+        // 连续 10 次（约 1000ms / 1秒）都确认未接入，确保电感和继电器绝对稳定后，才判定为空通道
+        return -1; 
+      } else {
+        // 可能是继电器正在弹跳、电感未稳定导致的误判！
+        // 给它机会，重新下发测量指令再试一次！
+        Modbus_WriteReg(0x0003, 0x0031);
+        continue;
+      }
+    } else {
+      disconnect_count = 0; // 只要有一次没报 0x8000，说明接触良好了，清零容错
+    }
+
+    if (!measure_done) {
+      // 如果 3 秒都没测完（或通信异常），补发指令重新触发
+      Modbus_WriteReg(0x0003, 0x0031);
+      continue;
+    }
+
+    // 2. 测量完成，读取频率和温度 (从 0x0022 开始读 7 个寄存器)
     uint8_t data[14];
     if (Modbus_ReadRegs(VM501_REG_S_FRQ, 7, data, 500) == 0) {
       uint16_t raw_freq = (data[0] << 8) | data[1];
@@ -229,21 +286,23 @@ int VM501_ReadSensor(uint8_t channel, float *freq, float *temp) {
         if (valid_count >= 3) {
           *freq = current_freq;
           *temp = current_temp;
-          return 0;
+          return 0; // 成功读到 3 次有效数据，返回
         } else {
-          // 当读出的频率大于 1Hz，再读取两次
+          // 还没凑够 3 次，火速触发下一次测量
           Modbus_WriteReg(0x0003, 0x0031);
         }
       } else {
         zero_freq_count++;
-        // 如果连续读出 0Hz
+        // 读到 0Hz，说明钢弦没振起来，立即重新触发
+        Modbus_WriteReg(0x0003, 0x0031);
         if (zero_freq_count >= 6) {
-          zero_freq_count = 0;
-          Modbus_WriteReg(0x0003, 0x0031);
+          return -1; // 连续 6 次 0Hz，判定为彻底失败（断线或损坏）
         }
       }
+    } else {
+      // 读取寄存器失败（超时/校验错），重新触发测量
+      Modbus_WriteReg(0x0003, 0x0031);
     }
-    timeout_ms -= poll_interval;
   }
 
   return -1;
