@@ -271,13 +271,14 @@ int VM501_ReadSensor(uint8_t channel, float *freq, float *temp) {
       continue;
     }
 
-    // 2. 测量完成，读取频率和温度 (从 0x0022 开始读 7 个寄存器)
+    // 2. 测量完成，读取数据 (从 0x0022 开始读 7 个寄存器，0x0022~0x0028)
     uint8_t data[14];
     if (Modbus_ReadRegs(VM501_REG_S_FRQ, 7, data, 500) == 0) {
+      // 恢复官方最稳定的 16 位频率直读模式
       uint16_t raw_freq = (data[0] << 8) | data[1];
-      int16_t raw_temp = (data[12] << 8) | data[13];
+      int16_t raw_temp = (data[12] << 8) | data[13]; // 0x0028 是温度
 
-      float current_freq = (float)raw_freq / 10.0f;
+      float current_freq = (float)raw_freq / 10.0f; // 0.1Hz 官方稳定分辨率
       float current_temp = (float)raw_temp / 10.0f;
 
       if (current_freq > 1.0f) {

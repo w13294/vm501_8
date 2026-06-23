@@ -13,6 +13,7 @@ import shutil
 import collections
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import json
 
 class HostApp:
     def __init__(self, root):
@@ -39,6 +40,11 @@ class HostApp:
         self.chart_data_freq = {i: collections.deque(maxlen=100) for i in range(1, 9)}
         self.chart_data_temp = {i: collections.deque(maxlen=100) for i in range(1, 9)}
         
+        # MQTT 初始化
+        self.mqtt_client = None
+        self.is_mqtt_connected = False
+        self.latest_data = {i: {'freq': 0.0, 'temp': 0.0} for i in range(1, 9)}
+
         # 定时更新 UI 和 图表
         self.root.after(100, self.update_ui_from_queue)
         self.root.after(1000, self.update_chart)
@@ -84,6 +90,32 @@ class HostApp:
         
         self.lbl_status = ttk.Label(control_frame, text="未连接", foreground="red")
         self.lbl_status.grid(row=0, column=7, padx=15, pady=5)
+
+        # ---------------- 顶部：MQTT控制区 ----------------
+        mqtt_frame = ttk.LabelFrame(main_frame, text="MQTT 控制")
+        mqtt_frame.pack(fill=tk.X, pady=(0, 10))
+
+        ttk.Label(mqtt_frame, text="服务器:").grid(row=0, column=0, padx=5, pady=5)
+        self.mqtt_host_var = tk.StringVar(value="127.0.0.1")
+        ttk.Entry(mqtt_frame, textvariable=self.mqtt_host_var, width=15).grid(row=0, column=1, padx=5, pady=5)
+
+        ttk.Label(mqtt_frame, text="端口:").grid(row=0, column=2, padx=5, pady=5)
+        self.mqtt_port_var = tk.StringVar(value="1883")
+        ttk.Entry(mqtt_frame, textvariable=self.mqtt_port_var, width=6).grid(row=0, column=3, padx=5, pady=5)
+
+        ttk.Label(mqtt_frame, text="Client ID:").grid(row=0, column=4, padx=5, pady=5)
+        self.mqtt_client_id_var = tk.StringVar(value="8301202510150151")
+        ttk.Entry(mqtt_frame, textvariable=self.mqtt_client_id_var, width=18).grid(row=0, column=5, padx=5, pady=5)
+
+        ttk.Label(mqtt_frame, text="Topic:").grid(row=0, column=6, padx=5, pady=5)
+        self.mqtt_topic_var = tk.StringVar(value="sensor/data")
+        ttk.Entry(mqtt_frame, textvariable=self.mqtt_topic_var, width=15).grid(row=0, column=7, padx=5, pady=5)
+
+        self.btn_mqtt_connect = ttk.Button(mqtt_frame, text="连接 MQTT", command=self.toggle_mqtt)
+        self.btn_mqtt_connect.grid(row=0, column=8, padx=15, pady=5)
+
+        self.lbl_mqtt_status = ttk.Label(mqtt_frame, text="未连接", foreground="red")
+        self.lbl_mqtt_status.grid(row=0, column=9, padx=15, pady=5)
 
         # ---------------- 中部：实时数据面板 (8个通道) ----------------
         realtime_frame = ttk.LabelFrame(main_frame, text="实时监控面板")
@@ -276,6 +308,10 @@ class HostApp:
                         foreground="black"
                     )
                 
+                # 保存最新数据用于 MQTT 上报
+                self.latest_data[ch]['freq'] = float(freq)
+                self.latest_data[ch]['temp'] = float(temp)
+                
                 # 存入图表缓存
                 self.chart_data_freq[ch].append(float(freq))
                 self.chart_data_temp[ch].append(float(temp))
@@ -296,6 +332,10 @@ class HostApp:
                         foreground="red"
                     )
                 
+                # 发生错误或超时，将该通道最新数据清零，防止上传陈旧脏数据
+                self.latest_data[ch]['freq'] = 0.0
+                self.latest_data[ch]['temp'] = 0.0
+                
                 # 记录 CSV
                 self.csv_writer.writerow([now_str, ch, "", "", status])
                 
@@ -303,6 +343,10 @@ class HostApp:
                 self.tree.insert("", 0, values=(now_str, ch, "-", "-", status))
             
             self.csv_file.flush() # 确保实时写入磁盘
+            
+            # 当收到第 8 通道的数据（无论是正常还是错误），说明一轮轮询结束，立即打包上传 MQTT
+            if ch == 8:
+                self.mqtt_publish_now()
             
             # 限制表格显示行数，防止内存占用过大
             children = self.tree.get_children()
@@ -347,9 +391,86 @@ class HostApp:
         self.is_connected = False
         if self.serial_port and self.serial_port.is_open:
             self.serial_port.close()
+        if self.mqtt_client:
+            self.mqtt_client.loop_stop()
+            self.mqtt_client.disconnect()
         if self.csv_file:
             self.csv_file.close()
         self.root.destroy()
+
+    # ---------------- MQTT 功能 ----------------
+    def toggle_mqtt(self):
+        try:
+            import paho.mqtt.client as mqtt
+        except ImportError:
+            messagebox.showerror("缺少依赖", "请先在电脑终端运行安装命令:\npip install paho-mqtt")
+            return
+
+        if not self.is_mqtt_connected:
+            try:
+                client_id = self.mqtt_client_id_var.get()
+                # 兼容 paho-mqtt 2.0.0 及以上版本的新 API 规范
+                try:
+                    self.mqtt_client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION1, client_id)
+                except AttributeError:
+                    # 如果用户安装的是 paho-mqtt 1.x 老版本，则退回旧版写法
+                    self.mqtt_client = mqtt.Client(client_id)
+                    
+                self.mqtt_client.on_connect = self.on_mqtt_connect
+                self.mqtt_client.on_disconnect = self.on_mqtt_disconnect
+                
+                host = self.mqtt_host_var.get()
+                port = int(self.mqtt_port_var.get())
+                self.mqtt_client.connect_async(host, port, 60)
+                self.mqtt_client.loop_start()
+            except Exception as e:
+                messagebox.showerror("MQTT 错误", f"无法连接 MQTT: {e}")
+        else:
+            if self.mqtt_client:
+                self.mqtt_client.loop_stop()
+                self.mqtt_client.disconnect()
+
+    def on_mqtt_connect(self, client, userdata, flags, rc):
+        if rc == 0:
+            self.is_mqtt_connected = True
+            self.root.after(0, lambda: self.btn_mqtt_connect.config(text="断开 MQTT"))
+            self.root.after(0, lambda: self.lbl_mqtt_status.config(text="已连接", foreground="green"))
+        else:
+            self.root.after(0, lambda: messagebox.showerror("MQTT 错误", f"连接失败，返回码 {rc}"))
+
+    def on_mqtt_disconnect(self, client, userdata, rc):
+        self.is_mqtt_connected = False
+        self.root.after(0, lambda: self.btn_mqtt_connect.config(text="连接 MQTT"))
+        self.root.after(0, lambda: self.lbl_mqtt_status.config(text="未连接", foreground="red"))
+
+    def mqtt_publish_now(self):
+        if self.is_mqtt_connected and self.mqtt_client:
+            client_id = self.mqtt_client_id_var.get()
+            topic = self.mqtt_topic_var.get()
+            
+            # 严格按照“通道1频率,通道2频率...通道8频率,通道1温度...通道8温度”组装一列字符串
+            freqs = []
+            temps = []
+            for i in range(1, 9):
+                freqs.append(f"{self.latest_data[i]['freq']:.2f}")
+                temps.append(f"{self.latest_data[i]['temp']:.1f}")
+                
+            data_str = ",".join(freqs) + "," + ",".join(temps)
+            
+            # 生成 13 位毫秒级时间戳
+            timestamp_ms = int(time.time() * 1000)
+            
+            # 生成完美匹配要求的 Payload 字典
+            payload = {
+                client_id: {
+                    str(timestamp_ms): data_str
+                }
+            }
+            
+            try:
+                self.mqtt_client.publish(topic, json.dumps(payload))
+            except Exception as e:
+                print(f"MQTT Publish Error: {e}")
 
 if __name__ == "__main__":
     root = tk.Tk()
