@@ -167,10 +167,11 @@ int VM501_Init(void) {
   VM501_SelectChannel(1);
   HAL_Delay(100);
 
-  // 1. 工作模式配置 WKMOD(0x05) = 0x4000
+  // 1. 工作模式配置 WKMOD(0x05) = 0x4002
   // bit14=1: 修改参数时不保存至 EEPROM (降低擦写损耗)
+  // bit1=1: F_REQM 寄存器显示高分辨率频率值 (0.01Hz)
   // bit0=0: 单次测量模式 (适配多通道轮询)
-  Modbus_WriteReg(VM501_REG_WKMOD, 0x4000);
+  Modbus_WriteReg(VM501_REG_WKMOD, 0x4002);
   HAL_Delay(100);
 
   // 2. 激励方法配置 EX_METH(0x0A) = 0x000D
@@ -192,6 +193,16 @@ int VM501_Init(void) {
   Modbus_WriteReg(VM501_REG_ATSD_SEL, 0);
   HAL_Delay(100);
 
+  // 5. 设置 AMP (0x0017) 过采样次数为 3 次，大幅提升数据稳定性
+  // 先读取原 AMP 值，防止覆盖底层的信号放大倍数配置 (bit4:0)
+  uint8_t amp_buf[2];
+  if (Modbus_ReadRegs(0x0017, 1, amp_buf, 500) == 0) {
+      uint16_t amp_val = (amp_buf[0] << 8) | amp_buf[1];
+      amp_val = (amp_val & 0xF0FF) | (3 << 8); // 清除 bit11:8，并填入 3
+      Modbus_WriteReg(0x0017, amp_val);
+      HAL_Delay(100);
+  }
+
   return 0;
 }
 
@@ -203,18 +214,18 @@ int VM501_ReadSensor(uint8_t channel, float *freq, float *temp) {
     Modbus_WriteReg(0x0003, 0x0031); // 触发第一次测量
   }
 
-  int timeout_ms = 12000; // 基础 12 秒总超时
+  int timeout_ms = 24000; // 由于设置了 3 次过采样，总测量时间变长，总超时放宽至 24 秒
   int valid_count = 0;
   int zero_freq_count = 0;
   int disconnect_count = 0; // 新增：空通道容错计数器
 
   while (timeout_ms > 0) {
-    // 1. 科学轮询 SYS_STA (0x0020) 判断测量是否完成，单次测量最多等 3000ms
+    // 1. 科学轮询 SYS_STA (0x0020) 判断测量是否完成，单次测量（含 3 次过采样）最多等 8000ms
     int wait_ms = 0;
     int measure_done = 0;
     int is_disconnected = 0;
 
-    while (wait_ms < 3000 && timeout_ms > 0) {
+    while (wait_ms < 8000 && timeout_ms > 0) {
       if (osKernelGetState() == osKernelRunning) {
         osDelay(100);
       } else {
@@ -271,14 +282,20 @@ int VM501_ReadSensor(uint8_t channel, float *freq, float *temp) {
       continue;
     }
 
-    // 2. 测量完成，读取数据 (从 0x0022 开始读 7 个寄存器，0x0022~0x0028)
+    // 2. 测量完成，读取数据 (从 0x0023 开始读 7 个寄存器，0x0023~0x0029)
+    // 寄存器映射: data[0:1]=S_FRQ(0x23), data[2:3]=F_REQMH(0x24),
+    //            data[4:5]=F_REQML(0x25), data[6:7]=SFC_FRQ(0x26),
+    //            data[8:9]=0x27, data[10:11]=0x28, data[12:13]=TEMP(0x29)
     uint8_t data[14];
     if (Modbus_ReadRegs(VM501_REG_S_FRQ, 7, data, 500) == 0) {
-      // 恢复官方最稳定的 16 位频率直读模式
-      uint16_t raw_freq = (data[0] << 8) | data[1];
-      int16_t raw_temp = (data[12] << 8) | data[13]; // 0x0028 是温度
+      // 高分辨率 F_REQM (0x0024~0x0025)，分辨率 0.01Hz
+      // WKMOD[3:1]=1 时：实际频率 = (F_REQMH * 65536 + F_REQML) / 100.0
+      uint16_t frq_h = (data[2] << 8) | data[3]; // F_REQMH (0x0024)
+      uint16_t frq_l = (data[4] << 8) | data[5]; // F_REQML (0x0025)
+      uint32_t raw_freq = ((uint32_t)frq_h << 16) | frq_l;
+      float current_freq = (float)raw_freq / 100.0f;
 
-      float current_freq = (float)raw_freq / 10.0f; // 0.1Hz 官方稳定分辨率
+      int16_t raw_temp = (data[12] << 8) | data[13]; // TEMP (0x0029)
       float current_temp = (float)raw_temp / 10.0f;
 
       if (current_freq > 1.0f) {
